@@ -1,0 +1,3015 @@
+﻿<!DOCTYPE html>
+<HTML><HEAD id=Head1><TITLE>ЭТП Сбербанк-АСТ </TITLE>
+<META content=IE=edge http-equiv=X-UA-Compatible>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META content=no-cache http-equiv=Pragma>
+<META content=no-cache http-equiv=Cache-Control>
+<META content=0 http-equiv=Expires>
+<META name=SKYPE_TOOLBAR content=SKYPE_TOOLBAR_PARSER_COMPATIBLE>
+<META name=robots content=index,follow>
+<META name=description content="Электронная площадка ЗАО Сбербанк - АСТ предназначена для осуществления закупок для обеспечения государственных и муниципальных нужд и функционирует в полном соответствии с положениями Федерального закона от 05 апреля 2013 г. N 44-ФЗ О контрактной системе в сфере закупок  товаров, работ, услуг для обеспечения государственных и муниципальных нужд">
+<META name=keywords content="Электронная площадка, Сбербанк - АСТ, осуществление закупок, для обеспечения государственных и муниципальных нужд, Федеральный закона от 05 апреля 2013 г. N 44-ФЗ, о контрактной системе в сфере закупок  товаров, работ, услуг для обеспечения государственных и муниципальных нужд">
+<META name=copyright content="ЗАО «Сбербанк - АСТ»"><LINK rel=stylesheet type=text/css href="/style/layout.css">
+<SCRIPT type=text/javascript src="/js/function44.js"></SCRIPT>
+<LINK rel=StyleSheet type=text/css href="/style/bluecurve.css">
+<SCRIPT type=text/javascript src="/js/aspxml20.js?v1"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/dsigconst.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/dsigning.js"></SCRIPT>
+<LINK rel=stylesheet type=text/css href="/js/jsCalendar/calendar-win2k-cold-1.css"><LINK rel=stylesheet type=text/css href="/style/ui-lightness/jquery-ui-1.8.1.custom.css">
+<SCRIPT type=text/javascript src="/js/jscalendar/calendar.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/jscalendar/lang/calendar-ru-UTF.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/jscalendar/calendar-setup.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/jquery/jquery-1.4.2.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/jquery/jquery-ui-1.8.1.custom.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/jquery/jquery.validate.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/jquery/jquery.extender.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/jquery/jquery.autocomplete.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/jquery/jquery.bgiframe.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/jquery/jquery.maskedinput-1.2.2.min.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/jquery/jquery.md5.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/range.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/utils.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/timer.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/slider.js"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/js/jquery/jquery.json.min.js"></SCRIPT>
+<LINK rel=stylesheet type=text/css href="/js/jquery/jquery.autocomplete.css">
+<SCRIPT type=text/javascript>
+        $(function () {
+            SettingA = 1;
+            $("a[onclick*='OpenPage(']").click();
+            SettingA = 0;
+        });
+      
+    </SCRIPT>
+
+<SCRIPT id=KasperskyLabVirtualKeyboardJavascriptExtension205 type=text/javascript>var KasperskyLabVirtualKeyboard = (function (ns)
+{
+
+ns.KeypressEmulator = function(impl)
+{
+	require(typeof impl === 'object', 'Invalid value for parameter "impl"');
+	var m_impl = impl;
+
+	// Emulates keyboard button press event:
+	// - sends keyboard events to a document,
+	// - inserts a character (characters) to the active element if this action hasn't been cancelled by event handlers.
+	// This emulator only works with buttons that have text representation.
+	// You cannot use it to emulate modifiers keys events.
+	// Please note that one button press can produce several characters.
+	this.emulateKeyboardEvent = function(element, text, keyCode, isCtrl, isAlt, isShift, isNumpad)
+	{
+		require(!!element, "Parameter 'element' is null.");
+		require(!!element.ownerDocument, "Element is not attached to document.");
+		require(typeof text === 'string', "Parameter 'text' has invalid type '" + (typeof text) + "'.");
+		require(typeof keyCode === 'number' && keyCode % 1 === 0 && keyCode >= 0, "Parameter 'keyCode' has invalid type or value.");
+		
+		ensureImplementationIsCreated(element.ownerDocument);
+
+		var keyLocation = isNumpad ? KeyLocations.DOM_KEY_LOCATION_NUMPAD : KeyLocations.DOM_KEY_LOCATION_STANDARD;
+		var charCodeForKeyEvents = text.length ? text.charCodeAt(0) : 0;
+		if (fireKeydownEvent(element, charCodeForKeyEvents, keyCode, isCtrl, isAlt, isShift, keyLocation))
+		{
+			for (var textIndex = 0; textIndex < text.length; ++textIndex)
+			{
+				deliverOneCharacter(element, text.charCodeAt(textIndex), isCtrl, isAlt, isShift, keyLocation);
+			}
+		}
+		fireKeyupEvent(element, charCodeForKeyEvents, keyCode, isCtrl, isAlt, isShift, keyLocation);
+	}
+
+	function deliverOneCharacter(element, charCode, isCtrl, isAlt, isShift, keyLocation)
+	{
+		if (fireKeyboardEvent('keypress', element, charCode, 0 /* keyCode */, isCtrl, isAlt, isShift, keyLocation))
+		{
+		 	insertCharToElementIfElementAllows(element, String.fromCharCode(charCode));
+			if (m_impl.generateInputEvents())
+			{
+				fireEvent('input', element);
+			}
+		}
+	}
+
+	function insertCharToElementIfElementAllows(element, char)
+	{
+		require(!!m_impl, 'No implementation found, browser is unsupported');
+
+		if (element.maxLength && element.maxLength > 0 && element.value.length >= element.maxLength)
+		{
+			return;
+		}
+
+		m_impl.insertCharacter(element, char);
+	}
+
+	function fireKeydownEvent(element, charCode, keyCode, isCtrl, isAlt, isShift, keyLocation)
+	{
+		return fireKeyboardEvent('keydown', element, charCode, keyCode, isCtrl, isAlt, isShift, keyLocation)
+	}
+
+	function fireKeyupEvent(element, charCode, keyCode, isCtrl, isAlt, isShift, keyLocation)
+	{
+		return fireKeyboardEvent('keyup', element, charCode, keyCode, isCtrl, isAlt, isShift, keyLocation)
+	}
+
+	function fireEvent(eventType, element)
+	{
+		require(!!m_impl, 'No implementation found, browser is unsupported');
+
+		var event = m_impl.createEvent(element.ownerDocument);
+		m_impl.initEvent(event, eventType);
+		return m_impl.fireEvent(event, eventType, element);
+	}
+
+	function fireKeyboardEvent(eventType, element, charCode, keyCode, isCtrl, isAlt, isShift, keyLocation)
+	{
+		require(!!m_impl, 'No implementation found, browser is unsupported');
+
+		var event = m_impl.createKeyboardEvent(element.ownerDocument);
+		m_impl.initKeyboardEvent(element.ownerDocument, event, eventType, charCode, keyCode, isCtrl, isAlt, isShift, keyLocation);
+		return m_impl.fireEvent(event, eventType, element);
+	}
+
+	function ensureImplementationIsCreated(document)
+	{
+		require(!!document, 'Invalid document');
+
+		if (!m_impl)
+		{
+			m_impl = createImpl(document);
+		}
+	}
+
+	var KeyLocations = {
+		DOM_KEY_LOCATION_STANDARD: 0,
+		DOM_KEY_LOCATION_LEFT: 1,
+		DOM_KEY_LOCATION_RIGHT: 2,
+		DOM_KEY_LOCATION_NUMPAD: 3
+	};
+}
+
+// TODO: move this function to a common place
+function require(condition, message)
+{
+	if (!condition)
+	{
+		throw new Error(message ? message : 'Requirement failure');
+	}
+}
+
+return ns;
+}(KasperskyLabVirtualKeyboard || {}));
+</SCRIPT>
+
+<SCRIPT id=KasperskyLabVirtualKeyboardJavascriptExtension206 type=text/javascript>var KasperskyLabVirtualKeyboard = (function (ns)
+{
+
+ns.KeypressEmulatorInternetExplorerImpl = function()
+{
+    var m_insertCharacterIe = hasModernSelectionApi() ? insertCharacterIeModern : insertCharacterIeLegacy;
+
+	this.generateInputEvents = function ()
+	{
+		return isInternetExplorer9OrGreaterDocumentMode();
+	}
+
+	this.createEvent = function(document)
+	{
+		return {
+			microsoftImpl: new MicrosoftKeyboardEventImpl(document),
+			dom2Impl: new Dom2KeyboardEventImpl(document)
+		};
+	}
+
+	this.createKeyboardEvent = this.createEvent;
+
+	this.initEvent = function(event, eventType)
+	{
+		event.microsoftImpl.initEvent(eventType);
+		event.dom2Impl.initEvent(eventType);
+	}
+
+	this.initKeyboardEvent = function(document, event, eventType, charCode, keyCode, isCtrl, isAlt, isShift, keyLocation)
+	{
+		event.microsoftImpl.initKeyboardEvent(eventType, charCode, keyCode, isCtrl, isAlt, isShift, keyLocation);
+		event.dom2Impl.initKeyboardEvent(eventType, charCode, keyCode, isCtrl, isAlt, isShift, keyLocation);
+	}
+
+	this.fireEvent = function(event, eventType, element)
+	{
+		// IE9 introduces support for DOM Level 2 Events. So IE9 and later versions, in Standards Mode,
+		// now support 3 event models:
+		// - DOM Level 2 Events (dispatchEvent/addEventListener),
+		// - the Microsoft Event Model (fireEvent/attachEvent)
+		// - DOM Level 0 or legacy event model (element.onclick="...").
+		// If the event is generated by browser itself all event handlers are called in the order they were attached.
+		// If element.fireEvent is called, the DOM0 handler is called first followed by the MS handler,
+		// regardless of the order in which they were registered. The DOM2+ handler is never called in this case.
+		// If element.dispatchEvent is called, the DOM0 handler and the DOM2+ handler appear in the order they were
+		// attached and the MS handler is never called.
+
+		var microsoftImplResult = event.microsoftImpl.fireEvent(eventType, element);
+
+		var dom0Handler = replaceDom0Handler(element, eventType, function() { return true; });
+		var dom2ImplResult = event.dom2Impl.fireEvent(eventType, element);
+		replaceDom0Handler(element, eventType, dom0Handler);
+
+		return microsoftImplResult && dom2ImplResult;
+	}
+
+	function replaceDom0Handler(element, eventType, newHandler)
+	{
+		var propertyName = 'on' + eventType;
+		var oldHandler = element[propertyName];
+		element[propertyName] = newHandler;
+		return oldHandler;
+	}
+
+	function hasModernSelectionApi() 
+    {
+	    return window.getSelection;
+	}
+
+	// document.selection is no longer supported. Starting with Internet Explorer 11 Preview
+	function insertCharacterIeModern(element, char) 
+    {
+	    // TODO: this is legacy code, it needs refactoring
+	    var selStart = element.selectionStart;
+	    var selEnd = element.selectionEnd;
+
+	    var valueLength = element.value.length;
+	    var beforeSelection = element.value.substr(0, selStart);
+	    var afterSelection = element.value.substr(selEnd, valueLength);
+
+	    element.value = beforeSelection + char + afterSelection;
+
+	    var diffLen = element.value.length - valueLength;
+	    var selLength = selEnd - selStart;
+	    var pos = selStart + diffLen + selLength;
+
+	    element.setSelectionRange(pos, pos);
+	}
+
+	function insertCharacterIeLegacy(element, char) 
+    {
+	    var textRange = document.selection.createRange();
+	    if (textRange.parentElement() !== element) 
+        {
+	        throw new Error("Selection is outside the input field");
+	    }
+
+	    textRange.text = char;
+	    textRange.select();
+	}
+
+	this.insertCharacter = function (element, char) 
+    {
+	    var document = element.ownerDocument;
+	    require(document && document.activeElement === element, 'Element should be in document and should be active');
+	    require(typeof char === 'string' && char.length === 1, 'Invalid parameter');
+	    m_insertCharacterIe(element, char);
+	}
+
+	function isInternetExplorer9OrGreaterDocumentMode()
+	{
+		return 'geolocation' in navigator;
+	}
+} // InternetExplorerImpl
+
+function MicrosoftKeyboardEventImpl(document)
+{
+	var m_event = document.createEventObject ? document.createEventObject() : null;
+
+	this.initEvent = function(_ /* eventType */)
+	{
+	}
+
+	this.initKeyboardEvent = function(_ /* eventType */, charCode, keyCode, isCtrl, isAlt, isShift, _ /* keyLocation */)
+	{
+		if (!m_event)
+			return;
+
+		m_event.keyCode = keyCode ? keyCode : charCode;
+		m_event.ctrlKey = isCtrl;
+		m_event.altKey = isAlt;
+		m_event.shiftKey = isShift;
+	}
+
+	this.fireEvent = function(eventType, element)
+	{
+		try
+		{
+		if (!!element.fireEvent)
+		{
+			return element.fireEvent('on' + eventType, m_event);
+		}
+		}
+		catch (e)
+		{
+		}
+		return true;
+	}
+} // MicrosoftKeyboardEventImpl
+
+function Dom2KeyboardEventImpl(document)
+{
+	m_event = null;
+
+	this.initEvent = function(eventType)
+	{
+		require(!m_event);
+
+		createEvent('Event');
+		if (!m_event || !m_event.initEvent)
+			return;
+
+		m_event.initEvent(eventType, true, true, document.defaultView);
+	}
+
+	this.initKeyboardEvent = function(eventType, charCode, keyCode, isCtrl, isAlt, isShift, keyLocation)
+	{
+		require(!m_event);
+
+		createEvent('KeyboardEvent');
+		if (!m_event || !m_event.initKeyboardEvent)
+			return;
+
+		var keyOrCharCode = keyCode ? keyCode : charCode;
+		var char = String.fromCharCode(charCode);
+		Object.defineProperty(m_event, "which", { get: function(){ return keyOrCharCode; } });
+		Object.defineProperty(m_event, "keyCode", { get: function(){ return keyOrCharCode; } });
+		Object.defineProperty(m_event, "charCode", { get: function(){ return keyCode ? 0 : charCode; } });
+		Object.defineProperty(m_event, "char", { get: function(){ return char; } });
+
+		var internetExplorerKeyLocation = getInternetExplorerKeyLocation(eventType, char, keyLocation);
+		m_event.initKeyboardEvent(eventType, true, true, document.defaultView
+			, getInternetExplorerKey(char, internetExplorerKeyLocation, eventType) // key
+			, internetExplorerKeyLocation // location
+			, getInternetExplorerModifiersString(isCtrl, isAlt, isShift) // modifiers string
+			, false // repeat
+			, undefined // locale
+			);
+	}
+
+	this.fireEvent = function(eventType, element)
+	{
+		if (!!element.dispatchEvent)
+		{
+			return element.dispatchEvent(m_event);
+		}
+		return true;
+	}
+
+	function createEvent(eventClass)
+	{
+		m_event = document.createEvent ? document.createEvent(eventClass) : null;
+	}
+
+	function getInternetExplorerKeyLocation(eventType, char, keyLocation)
+	{
+		if (eventType === 'keypress' && char === '/')
+		{
+			return KeyLocations.DOM_KEY_LOCATION_STANDARD;
+		}
+		return keyLocation;
+	}
+
+	function getInternetExplorerKey(char, keyLocation, eventType)
+	{
+		if (char === '.' && keyLocation === KeyLocations.DOM_KEY_LOCATION_NUMPAD && eventType === 'keypress')
+			return 'Del'; // Looks like a bug in IE
+		if (char === ' ')
+			return 'Spacebar';
+		var numpadQuirks = {
+			'/': 'Divide',
+			'*': 'Multiply',
+			'-': 'Subtract',
+			'+': 'Add',
+			'.': 'Decimal'
+		};
+		return (keyLocation === KeyLocations.DOM_KEY_LOCATION_NUMPAD && char in numpadQuirks) ? numpadQuirks[char] : char;
+	}
+
+	function getInternetExplorerModifiersString(isCtrl, isAlt, isShift)
+	{
+		var modifiersArray = [];
+		pushBackIf(isCtrl, 'Control', modifiersArray);
+		pushBackIf(isAlt, 'Alt', modifiersArray);
+		pushBackIf(isShift, 'Shift', modifiersArray);
+		return modifiersArray.join(' ');
+	}
+
+	function pushBackIf(condition, value, array)
+	{
+		if (condition)
+		{
+			array.push(value);
+		}
+	}
+
+	var KeyLocations = {
+		DOM_KEY_LOCATION_STANDARD: 0,
+		DOM_KEY_LOCATION_LEFT: 1,
+		DOM_KEY_LOCATION_RIGHT: 2,
+		DOM_KEY_LOCATION_NUMPAD: 3.
+	};
+} // Dom2KeyboardEventImpl
+
+// TODO: move this function to a common place
+function require(condition, message)
+{
+	if (!condition)
+	{
+		throw new Error(message ? message : 'Requirement failure');
+	}
+}
+
+return ns;
+}(KasperskyLabVirtualKeyboard || {}));
+</SCRIPT>
+
+<SCRIPT id=KasperskyLabVirtualKeyboardJavascriptExtension210 type=text/javascript>var KasperskyLab = (function(namespace)
+{
+
+namespace.getElementScreenPosition = function(element)
+{
+	var document = element.ownerDocument;
+	var window = document.parentWindow || document.defaultView;
+	return getElementBox(element);
+
+	function getElementBox(element)
+	{
+		var box = getBoundingClientRect(element);
+		var frame = window;
+		while (frame.parent != frame)
+		{
+			moveBox(box, getFrameOffset(frame));
+			moveBox(box, getDocumentOffset(frame.document));
+			frame = frame.parent;
+		}
+
+		moveBox(box, getDocumentOffset(window.top.document));
+		return box;
+	}
+
+	function getFrameOffset(frame)
+	{
+		var frameElement = frame.frameElement;
+		var frameElementBox = getBoundingClientRect(frameElement);
+		var paddingLeft = 0;
+		var paddingTop = 0;
+		if (frame.getComputedStyle)
+		{
+			paddingLeft = parseInt(frame.getComputedStyle(frameElement, "").getPropertyValue('padding-left'), 10) || 0;
+			paddingTop = parseInt(frame.getComputedStyle(frameElement, "").getPropertyValue('padding-top'), 10) || 0;
+		}
+		else if (frameElement.currentStyle)
+		{
+			if (isIeModernMode(frame.parent.document) || (isIeModernMode(frame.document) && !isFrameset(frame)))
+			{
+				paddingLeft = parseInt(frameElement.currentStyle.paddingLeft, 10) || 0;
+				paddingTop = parseInt(frameElement.currentStyle.paddingTop, 10) || 0;
+			}
+		}
+		return {
+			left: frameElementBox.left + frameElement.clientLeft + paddingLeft,
+			top: frameElementBox.top + frameElement.clientTop + paddingTop
+			};
+	}
+
+	function getBoundingClientRect(element)
+	{
+		var box = element.getBoundingClientRect();
+		return {
+			left: box.left,
+			top: box.top,
+			right: box.right,
+			bottom: box.bottom
+			};
+	}
+
+	function getDocumentOffset(document)
+	{
+		var offset = { left: 0, top: 0 };
+		if (isIe() && isIeModernMode(document))
+		{
+			var documentBox = getBoundingClientRect(document.documentElement);
+			offset.left += documentBox.left < 0 ? -documentBox.left : 0;
+			offset.top += documentBox.top < 0 ? -documentBox.top : 0;
+		}
+		return offset;
+	}
+
+	function isIeModernMode(document)
+	{
+		return document.documentMode && document.documentMode > 7;
+	}
+
+	function isIe()
+	{
+		return /Trident/.test(window.navigator.userAgent);
+	}
+
+	function isFrameset(window)
+	{
+		return window.frames.length > 0 && String(window.frames[0].frameElement.tagName).toUpperCase() === 'FRAME';
+	}
+
+	function moveBox(box, offset)
+	{
+		box.left += offset.left;
+		box.top += offset.top;
+		box.right += offset.left;
+		box.bottom += offset.top;
+	}
+}
+
+return namespace;
+}(KasperskyLab || {}));
+</SCRIPT>
+
+<SCRIPT id=KasperskyLabVirtualKeyboardJavascriptExtension208 type=text/javascript>var KasperskyLabVirtualKeyboard = (function (ns)
+{
+
+ns.TsfCompositionView = function(inputElement, window, document)
+{
+    this.update = function(composition)
+	{
+		if (composition.text.length == 0)
+		{
+			hide();
+		}
+		else
+		{
+			show(composition);
+		}
+	}
+
+    this.hide = function()
+	{
+		hide();
+	}
+
+	this.getLayout = function()
+	{
+		if (!m_view)
+		{
+			return { isVisible: false };
+		}
+		return {
+			isVisible: true,
+			compositionTextRect: KasperskyLab.getElementScreenPosition(getTextContainerElement()),
+			selectedTextRect: getSelectionLayout()
+			};
+	}
+
+	var m_view = null;
+
+	var topZOrder = 'z-index:20000!important;';
+	var noPadding = 'padding:0!important;';
+	var noMargin = 'margin:0!important;';
+	var noBorder = 'border-bottom:1px solid transparent!important;';
+	var autoWidthHeight = 'width:auto!important;height:auto!important;';
+	var fontSize = '16px';
+	var textElementsStyle = noPadding + noMargin + topZOrder + autoWidthHeight +
+		"font:" + fontSize + "/1 Arial,Helvetica,sans-serif!important;text-align:left!important;"+
+		"white-space:nowrap!important;"
+		;
+
+	function show(composition)
+	{
+		if (!m_view)
+		{
+			m_view = { rootElement: createViewElement() };
+			document.body.appendChild(m_view.rootElement);
+			// TODO
+			// addEvent(window, "resize", updateViewPosition);
+			// TODO: the view should send updated coordinates to the plugin
+			m_view.timer = setInterval(updateViewPosition, 500);
+		}
+		updateViewContent(composition);
+		updateViewPosition();
+	};
+
+	function hide()
+	{
+		if (m_view)
+		{
+			if (m_view.timer)
+			{
+				clearInterval(m_view.timer);
+				delete m_view.timer;
+			}
+
+			// removeEvent(window, "resize", updateViewPosition); // TODO
+
+			removeElementFromDOM(m_view.rootElement);
+			m_view = null;
+		}
+	};
+
+	function removeElementFromDOM(element)
+	{
+		element.parentNode && element.parentNode.removeChild(element);
+	}
+
+	function createViewElement()
+	{
+		var viewElement = makeDiv(
+			topZOrder + noMargin + autoWidthHeight +
+"position:absolute!important;display:block!important;padding:11px 10px!important;"+
+"text-align:left!important;border:1px solid #B2B2B2!important;border-radius:5px!important;"+
+"background:#fff!important;"
+			);
+		appendChildsToParent(viewElement, createTextContainerElement());
+		return viewElement;
+	}
+
+	function updateViewContent(composition)
+	{
+		var splitPoints = transformCompositionToSplitPoints(composition);
+		var textContainerElement = createTextElements(composition.text, splitPoints);
+		m_view.rootElement.replaceChild(textContainerElement, getTextContainerElement());
+	}
+
+	function getTextContainerElement()
+	{
+	    return m_view.rootElement.firstChild;
+	}
+
+	function createTextContainerElement()
+	{
+		return makeDiv(textElementsStyle + "position:static!important;display:block!important;background:#transparent!important;");
+	}
+
+	function transformCompositionToSplitPoints(composition)
+	{
+		var sortedRanges = sortRanges(
+			makeRangesFromTextDecorations(composition.textDecorations)
+			.concat(makeRangeFromSelection(composition))
+			);
+		var allPoints = generateArray(composition.text.length + 1, function() { return {}; });
+		applySortedRanges(allPoints, sortedRanges);
+		return selectSplitPoints(allPoints);
+	}
+
+	function sortRanges(ranges)
+	{
+		return ranges.sort(function(a, b) {
+			if (a.start != b.start)
+			{
+				return a.start < b.start ? -1 : 1;
+			}
+			return a.end > b.end ? -1 : 1;
+		});
+	}
+
+	function makeRangesFromTextDecorations(textDecorations)
+	{
+		var result = new Array(textDecorations.length);
+		for (var i = 0; i < textDecorations.length; ++i)
+		{
+			result[i] = makeRangeFromTextDecoration(textDecorations[i]);
+		}
+		return result;
+	}
+
+	function makeRangeFromTextDecoration(textDecoration)
+	{
+		return {
+			start: textDecoration.start,
+			end: textDecoration.end,
+			styles: {
+				underlineStyle: textDecoration.underlineStyle,
+				isBoldUnderline: textDecoration.isBoldUnderline
+			}
+		};
+	}
+
+	function makeRangeFromSelection(composition)
+	{
+		return composition.selectionStart == composition.selectionEnd ?
+			{ start: composition.selectionStart, end: composition.selectionEnd, styles: { cursor: true } } :
+			{ start: composition.selectionStart, end: composition.selectionEnd, styles: { selected: true } };
+	}
+
+	function applySortedRanges(allPoints, sortedRanges)
+	{
+		for (var i = 0; i < sortedRanges.length; ++i)
+		{
+			applyRange(allPoints, sortedRanges[i]);
+		}
+	}
+
+	function applyRange(allPoints, range)
+	{
+		extendObject(allPoints[range.start], range.styles);
+		for (var i = range.start + 1; i < range.end; ++i)
+		{
+			extendObject(allPoints[i], range.styles);
+		}
+	}
+
+	function extendObject(object, addon)
+	{
+		for (var key in addon)
+		{
+	        if (addon.hasOwnProperty(key))
+	        {
+				object[key] = addon[key]
+	        }
+		}
+		return object;
+	}
+
+	function selectSplitPoints(allPoints)
+	{
+		if (allPoints.length == 0)
+		{
+			return [];
+		}
+		var splitPoints = [];
+		var prevStyle = { underlineStyle: 'none' };
+		for (var i = 0; i < allPoints.length; ++i)
+		{
+			var currentStyle = allPoints[i];
+			if (!equalStyles(prevStyle, currentStyle) || currentStyle.cursor)
+			{
+				splitPoints.push({ position: i, styles: currentStyle });
+				prevStyle = currentStyle;
+			}
+		}
+		if (splitPoints[splitPoints.length - 1].position != allPoints.length - 1)
+		{
+			splitPoints.push({ position: allPoints.length - 1, styles: currentStyle });
+		}
+		return splitPoints;
+	}
+
+	function equalStyles(a, b)
+	{
+		return a.underlineStyle == b.underlineStyle &&
+			a.isBoldUnderline == b.isBoldUnderline &&
+			a.selected == b.selected;
+	}
+
+	function generateArray(length, valueGenerator)
+	{
+		var array = new Array(length);
+		for (var i = 0; i < length; ++i)
+		{
+			array[i] = valueGenerator();
+		}
+		return array;
+	}
+
+	function createTextElements(text, splitPoints)
+	{
+		var rootElement = createTextContainerElement();
+		for (var i = 0; i < splitPoints.length; ++i)
+		{
+			if (splitPoints[i].styles.cursor)
+			{
+				var commonStyles = noPadding + noMargin + topZOrder + noBorder + "height:"
+						+ fontSize + "!important;";
+				var caretWrapperElement = makeDiv(commonStyles + "position:relative!important;display:inline!important;width:1px!important;");
+				caretWrapperElement.selected = 1;
+				var caretElement = makeDiv(commonStyles + "position:absolute!important;display:block!important;top:0!important;left:-1px!important;width:1px!important;background:#000!important;");
+				appendChildsToParent(rootElement, appendChildsToParent(caretWrapperElement, caretElement));
+			}
+			if (i + 1 < splitPoints.length)
+			{
+				var colorStyle = splitPoints[i].styles.selected ?
+					'color:#fff!important;background:#3297FD!important;' :
+					'color:#000!important;background:#transparent!important;';
+				var underlineStyle = getUnderlineStyle(splitPoints[i].styles.underlineStyle, splitPoints[i].styles.isBoldUnderline);
+				var textElement = makeDiv(textElementsStyle + "position:static!important;display:inline!important;" + colorStyle + underlineStyle);
+				textElement.selected = splitPoints[i].styles.selected ? 1 : 0;
+				setInnerText(textElement, text.substr(splitPoints[i].position, splitPoints[i+1].position - splitPoints[i].position));
+				appendChildsToParent(rootElement, textElement);
+			}
+		}
+		return rootElement;
+	}
+
+	function getSelectionLayout()
+	{
+	    var container = getTextContainerElement();
+	    var selectedElements = filter(container.childNodes, function(element) { return element.selected; });
+	    if (!selectedElements.length)
+	    {
+	        return KasperskyLab.getElementScreenPosition(container);
+	    }
+	    var firstElement = selectedElements[0];
+	    var lastElement = selectedElements[selectedElements.length - 1];
+	    var topLeft = KasperskyLab.getElementScreenPosition(firstElement);
+	    var bottomRight = KasperskyLab.getElementScreenPosition(lastElement);
+	    return { top: topLeft.top, left: topLeft.left, bottom: bottomRight.bottom, right: bottomRight.right };
+	}
+
+	var underlineTypesToStylesConversionTable = {
+		'solid': 'solid',
+		'dotted': 'dotted',
+		'dashed': 'dashed',
+		'wavy': 'dotted'
+	};
+
+	function getUnderlineStyle(underlineType, isBold)
+	{
+		var style = underlineTypesToStylesConversionTable[underlineType];
+		if (!style)
+		{
+			return noBorder;
+		}
+		var width = isBold ? '2px' : '1px';
+		return 'border-bottom: ' + width + ' ' +  style + ' #000!important;border-top:none!important;border-left:none!important;border-right:none!important;';
+	}
+
+	function setInnerText(element, text)
+	{
+		if (typeof(element.textContent) != 'undefined')
+		{
+			element.textContent = text;
+		}
+		else
+		{
+			element.innerText = text;
+		}
+	}
+
+	function updateViewPosition()
+	{
+		var view = m_view.rootElement;
+		var inputPosition = getElementPositionInWindow(inputElement);
+		var viewHeight = view.offsetHeight;
+		var topInputWindowPosition = inputPosition.top - getPageScroll().top; // vertical position of the element relative to the window
+		var bottomInputWindowPosition = getHeightOfVisiblePartOfPage() - topInputWindowPosition - inputElement.offsetHeight; // free space right to the element
+
+		if (!m_view.currentPosition || m_view.currentPosition.top != inputPosition.top || m_view.currentPosition.left != inputPosition.left)
+		{
+			view.style.left = inputPosition.left + "px";
+
+			if (bottomInputWindowPosition > viewHeight - 1)
+			{
+				view.style.top = (inputPosition.top + inputElement.offsetHeight - 1) + "px";
+			}
+			else
+			{
+				view.style.top = (inputPosition.top - viewHeight + 1) + "px";
+			}
+			m_view.currentPosition = inputPosition;
+		}
+	}
+
+	function getElementPositionInWindow(element)
+	{
+		var top = 0;
+		var left = 0;
+				
+		while (element)
+		{
+			top = top + element.offsetTop;
+			left = left + element.offsetLeft;
+			element = element.offsetParent;
+		}
+			
+		return {
+			left: left,
+			top: top
+		};
+	}
+
+	// Amount of vertical space before the currently visible part of the document
+	function getPageScroll()
+	{
+		var xScroll;
+		var yScroll;
+		if (window.pageYOffset)
+		{
+			yScroll = window.pageYOffset;
+			xScroll = window.pageXOffset;
+		}
+		else if (document.documentElement && document.documentElement.scrollTop)
+		{
+			yScroll = document.documentElement.scrollTop;
+			xScroll = document.documentElement.scrollLeft;
+		}
+		else if (document.body)
+		{
+			yScroll = document.body.scrollTop;
+			xScroll = document.body.scrollLeft;
+		}
+			
+		return {
+			left: xScroll,
+			top: yScroll
+		};
+	}
+
+	function getHeightOfVisiblePartOfPage()
+	{
+		var windowHeight;
+		if (window.innerHeight)
+		{
+			windowHeight = window.innerHeight;
+		}
+		else if (document.documentElement && document.documentElement.clientHeight)
+		{
+			windowHeight = document.documentElement.clientHeight;
+		}
+		else if (document.body)
+		{
+			windowHeight = document.body.clientHeight;
+		}
+		return windowHeight;
+	}
+
+	function makeDiv(cssText)
+	{
+		var div = document.createElement('div');
+		div.style.cssText = cssText || '';
+		return div;
+	}
+
+	function appendChildsToParent(parent)
+	{
+		for (var i = 1, length = arguments.length; i < length; ++i)
+		{
+			parent.appendChild(arguments[i]);
+		}
+		return parent;
+	}
+
+	function filter(list, predicate)
+	{
+	    var result = [];
+	    for (var i = 0; i < list.length; ++i)
+	    {
+	        if (predicate(list[i]))
+	        {
+	            result.push(list[i]);
+	        }
+	    }
+	    return result;
+	}
+}
+
+return ns;
+}(KasperskyLabVirtualKeyboard || {}));
+</SCRIPT>
+
+<SCRIPT id=KasperskyLabVirtualKeyboardJavascriptExtension209 type=text/javascript>var KasperskyLabVirtualKeyboard = (function (ns)
+{
+
+ns.TsfEditor = function(inputElement, window, document, eventsSink, viewFactory)
+{
+	var m_compositionView = null;
+
+	this.destroy = function()
+	{
+		if (m_compositionView)
+		{
+			m_compositionView.hide();
+			m_compositionView = null;
+		}
+	}
+
+	this.insertText = function(text)
+	{
+		// TODO: use keypress emulator to insert text
+		insertText(inputElement, text);
+	}
+
+	this.setComposition = function(composition)
+	{
+		if (!m_compositionView)
+		{
+			m_compositionView = viewFactory(inputElement, window, document);
+		}
+		m_compositionView.update(composition);
+		eventsSink.onCompositionLayoutChange(m_compositionView.getLayout(), getTopWindowLayout());
+	}
+
+	function getTopWindowLayout()
+	{
+		var topElement = window.top.document.documentElement;
+		check(topElement, 'Top element is not defined');
+		check(typeof(topElement.offsetWidth) != 'undefined', 'offsetWidth is not found');
+		check(typeof(topElement.offsetHeight) != 'undefined', 'offsetHeight is not found');
+		return {
+			width: topElement.offsetWidth,
+			height: topElement.offsetHeight
+			};
+	}
+
+	function insertText(element, text)
+	{
+		check(typeof(text) == 'string', 'Invalid parameter');
+
+		if (document.selection && document.selection.createRange)
+		{
+			var textRange = document.selection.createRange();
+			if (textRange.parentElement() !== element)
+			{
+				throw new Error("Selection is outside the input field");
+			}
+	
+			textRange.text = text;
+			textRange.select();
+		}
+		else
+		{
+			var selectionStart = element.selectionStart;
+			var selectionEnd = element.selectionEnd;
+
+			var textBeforeSelection = element.value.substr(0, selectionStart);
+			var textAfterSelection = element.value.substr(selectionEnd, element.value.length - selectionEnd);
+
+			element.value = textBeforeSelection + text + textAfterSelection;
+
+			var positionAfterText = textBeforeSelection.length + text.length;
+			element.setSelectionRange(positionAfterText, positionAfterText);
+		}
+	}
+
+	function check(condition, requirementMessage)
+	{
+		if (!condition)
+		{
+			throw new Error('Requirement failed: ' + requirementMessage);
+		}
+	}
+}
+
+return ns;
+}(KasperskyLabVirtualKeyboard || {}));
+</SCRIPT>
+
+<SCRIPT id=KasperskyLabVirtualKeyboardJavascriptExtension207 type=text/javascript>var KasperskyLabVirtualKeyboard = (function (ns)
+{
+
+ns.keyboardEventsDelivery = new KeyboardEventsDeliveryExtension();
+
+function KeyboardEventsDeliveryExtension()
+{
+	var m_keypressEmulator = new KasperskyLabVirtualKeyboard.KeypressEmulator(new KasperskyLabVirtualKeyboard.KeypressEmulatorInternetExplorerImpl());
+	var m_tsfEditor = null;
+
+	this.cleanup = function()
+	{
+		destroyTsfEditor();
+	}
+
+	this.deliverProtectedKeyboardEventToDocument = function(text, keyCode, isCtrl, isAlt, isShift, isNumpad)
+	{
+		try
+		{
+			check(!!document.activeElement, 'No element has focus');
+
+			m_keypressEmulator.emulateKeyboardEvent(document.activeElement, text, keyCode, isCtrl, isAlt, isShift, isNumpad);
+		}
+		catch (e)
+		{
+			traceError('Cannot deliver keyboard event: ' + e.message)
+		}
+	}
+
+	this.tsfEditorCreate = function(tsfEditorEventsSink)
+	{
+		destroyTsfEditor();
+
+		check(!!document.activeElement, 'No element has focus');
+		var viewFactory = function(element, window, document)
+		{
+			return new KasperskyLabVirtualKeyboard.TsfCompositionView(element, window, document);
+		}
+		m_tsfEditor = new KasperskyLabVirtualKeyboard.TsfEditor(document.activeElement, window, document, tsfEditorEventsSink, viewFactory);
+	}
+
+	function destroyTsfEditor()
+	{
+		if (m_tsfEditor)
+		{
+			m_tsfEditor.destroy();
+			m_tsfEditor = null;
+		}
+	}
+
+	this.tsfEditorInsertText = function(text)
+	{
+		check(!!m_tsfEditor, 'No TSF editor is avaliable');
+		m_tsfEditor.insertText(text);
+	}
+
+	this.tsfEditorSetComposition = function(text, selectionStart, selectionEnd)
+	{
+		check(!!m_tsfEditor, 'No TSF editor is avaliable');
+		m_tsfEditor.setComposition({
+			text: text,
+			selectionStart: selectionStart,
+			selectionEnd: selectionEnd,
+			textDecorations: decodeDecorations(Array.prototype.slice.call(arguments, 3))
+			});
+	}
+
+	function decodeDecorations(listOfTuples)
+	{
+	    var tupleSize = 4;
+	    check(listOfTuples.length % tupleSize == 0);
+	    var decorations = [];
+	    for (var i = 0; i + tupleSize <= listOfTuples.length; i += tupleSize)
+	    {
+	        decorations.push({
+	            start: listOfTuples[i],
+	            end: listOfTuples[i + 1],
+	            underlineStyle: listOfTuples[i + 2],
+	            isBoldUnderline: listOfTuples[i + 3]
+	        });
+	    }
+	    return decorations;
+	}
+}
+
+// TODO: move this function to a common place
+function check(condition, message)
+{
+	if (!condition)
+	{
+		throw new Error(message ? message : 'Requirement failure');
+	}
+}
+
+// TODO: move this function to a common place
+function traceError(msg)
+{
+    if (console && console.error)
+        console.error(msg);
+}
+
+return ns;
+}(KasperskyLabVirtualKeyboard || {}));
+</SCRIPT>
+
+<SCRIPT id=KasperskyLabVirtualKeyboardJavascriptExtension202 type=text/javascript>function KasperskyVirtualKeyboardTooltip(element, text, window, document) {
+    'use strict';
+	// global variables with different tooltip inner elements
+	var tooltip,
+		topMiddle,
+		pointerLeft,
+		pointer,
+		pointerRight,
+		middleLeft,
+		contentWrapper,
+		content,
+		contentText,
+		middleRight,
+		bottomMiddle,
+		logo,
+		close,
+
+	// some more global variables with cached values
+        aspectRatio = 3,
+		pointerPosition,
+		visible = false,
+		currentElement,
+		that = this,
+        contentPadding = 5;
+        
+    // some helper functions with syntax sugar
+	function $div(id, cssText) {
+		var prefix = "vk",
+            div = document.createElement('div');
+            
+		if (id) {
+			div.id = prefix + "_" + id;
+		}
+		div.style.cssText = cssText || '';
+		return div;
+	}
+
+	function append(parent) {
+		for (var i = 1, length = arguments.length; i < length; i++) {
+			parent.appendChild(arguments[i]);
+		}
+		return parent;
+	}
+
+	function addEvent(elem, evType, fn) {
+		if (elem.addEventListener) {
+			elem.addEventListener(evType, fn, false);
+		} else if (elem.attachEvent) {
+			elem.attachEvent('on' + evType, fn);
+		}
+	}
+
+	tooltip = append($div('tooltip', "position: absolute; z-index: 10000; text-align: left;"),
+		append($div(),
+			$div('top_left', "float: left; width: 11px; height: 15px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAXUlEQVR4nGNgGOaAkQh5NiDmBGJ2fIqZgZgfiAWBWACIufCZKATEWgUFBSn3798/9/v375+4FLMDsXJOTk7yr1+/fvyHAlyKQdYaP3r06OJ/JIBLsTgQ24KsRlYMAGmENyxEksDbAAAAAElFTkSuQmCC) center bottom no-repeat"),
+			topMiddle = $div('top_middle', "float: left; height: 15px; width: 200px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAALCAYAAAC+jufvAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGElEQVR4nGNgwAOkmICEFsN/IACxGBAEAEx1BEmizFIDAAAAAElFTkSuQmCC) center bottom repeat-x"),
+			$div('top_right', "float: left; width: 11px; height: 15px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAaklEQVR4nGNgGOaAGYjFgZgViP8D8T9Cio2AmBeqgRGIf0I1Yir+/fv37YSEBPO/f/++Pn369Aeg2B8g/oHV6P9Q8OvXrx+ZmZmJQCFlIGbHqxgE7t+/fw4oZAzEAgQVA50Ecq8t1NMYAAB2VkAikeSslQAAAABJRU5ErkJggg==) center bottom no-repeat")),
+		append($div(false, "clear:left"),
+			middleLeft = $div('middle_left', "float: left; width: 11px; height: 100px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAABCAYAAAAIN1RAAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAEklEQVR4nGNgwA6kgNjlPxoAAI5LEE8zE25BAAAAAElFTkSuQmCC)"),
+			contentWrapper = append($div(false, "float: left; height: 90px; padding: " + contentPadding + "px; background-color: white;"),
+                logo = $div(false, "float:left; padding-left: 3px; height: 20px; width: 65px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEEAAAAPCAYAAAC7paJZAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAFmElEQVR4nLVXa2xURRQ+c+9uW7BFoLWKwKYgCY8CP3xGQoKPKJpoqLa7UmJsUSFSui2GBkElrhBRK2LbhWKNRrS0FHehDSQGMRITCBLQqHT7oErSpEUr9AH0me7eO34zd1+32/rD0pOcubNn5pzzzZlzZmaJxkv5q++mfEfmuO38FxW+8AAVZC2bKPPK+C1oFcR4NW1anTZ+OKOQ6xELaXoNceah9c9OnggXFnLa76CANUD7q3sMpy6Fei5BNhSgfbVdptmbMqZSSd318G+n/UHi9Ax6O6ikplXKNqyZRnE8jm7E36ADB4ZMi+mZkRyDoPTQP2Gdwb5e+uz4gGm8K3UtgjyXiGeGx8bCrAd0UiwKxfcPUPGx3rANEbxJiUk07e8ucv0YECKO7WNEuuiLTPCRxe+NOG18F8Y6SFXXmMAU2peTZt1lXgFzyE+cxR0Jq79G6if1DwJsB+VnfUQuexx137lAykeyoeOV/fiEfqlT4PhQ6kjiwkcHub1HoxyPwOzbKfU5rcH3JA3Gn5WBCVF8wjHIz1NrmkX8rF9sK2xIt131pdtafl96T6q5HAozH4LTreidoDKv2zSm03a0aynPfldYxmmm/CbN7zYHh0QGVILbiLEi6uYfRI1dCI6FOFaH8y3UyXYH5cLfdRqLJGZmYN7rKQWofPQXIzDr5Hi+IwPt4+DNocxknHI11boImVBn9Q8viwQhz55IunJQOtSwWLOjpWifBCeQyjaG5Yy3yG9P4/IR0G6S2/MSJacDIDWinp+LDLGDcizEo+v4YHtVUP4neK4p+NGYNaUave4wZrf3NNrD8LPL0OEf4/dp2PY2LpydgQw4id8pquY/gZJYxxW1NRIECytDOw/OX6VyT4fJma5slyA5fQujBdK5II32k9hBHY6i0y9EvZemo00F90WLAWSRL332jpj5EZ2pZGSGKFixiDjg2xUzV2BmCFAMZq0IzWRS6SzG04gpeUKqatoZnelFis6dnNEesBPijhDwRKSg2K2rdDPxO5Oj1zNxKFEGjJWToryB/hRkQ4EcMxy/D76fOn3ma9JpL6fhwGX0UqBbHBLPHBy6XWf8C86isyNI+Y6yoM4sBNzQKfWcQXsU+HJgc1HU7LExu4+2B3HNAVdQ2WGfEM9v+atzia/9oq6wXJTENvA+ooAtFIS+YC2lUuJAsclgQN2CVt/7a/O5+lM/zbByfgpznZSbm2AEnfaQ2DXGXjbpcV1k1i8IwPNU5gnX/pVJCTeW+NoeZpyb5wti/FMSuy5KIOXaV2G5SjtJ5ARnL0bNHhuzoN7bhOwi7r+3Y8awF1Z/YAW+yGTFFklht7cKKKoAxEkF9qekzKipHCyk8tHumysRua+nDGnvkTiskvpy5Jxyj0j1n0nsXjTtPdKMOnwMAagdBQQtbmi7ECN0exrh6y0SZdmVsjUsL/H8RsZ1Nsc8fxTMIcIheOhCfSF94hl5aCOWvM5vtcA/z0ZNnTfXsTosItuOVPySNmenBA/BONL13YrGihEEV9fntcgEOgfnRfIcMM6CNHDnaIuNJV6KtOZhHknT00vQ4vBi78iXoiDjUFQQoCsx80diDlJD+qzpS3oHapsWpKVFZHNtuB6fgO3zwLENX+gO9+He5B6Epl3OEg+hjXYH3G2gYf9KTEpGmu8k95HmhYadiqA9sUuv0LWmeaRyGBVZwIyDjvMfAPaP2LX7cc2plTFyOUbfYzebZN/l0rHoHJRAMYL/NIkrVRyKHPHiWk1QwYy50J6NPFlvYKYqIWa6ci/WcVxT+X342SpkOvMvUMIlxYLOlcuh3v8jpwPpxA+QKIfkaytCr7FbSs4slB97E1xB7m9eu+X2abz/Hbh8yPjwYlw1IQEQxMgGP7WUzAsmxP64SbzJQ2+GiSJR56O9QW4h/QshWkZQIZqe3wAAAABJRU5ErkJggg==) center center no-repeat"),
+                close = $div(false, "cursor: pointer; float:right; height: 20px; width: 13px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAPCAYAAAA/I0V3AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAp0lEQVR4nGNgGNSAEZnT29t7FEhx/P//372kpOQNSKynp0eEkZFxJ5D5q7i42BIkxoJmCDsQGwEVHQAqdgCbCmQDKW0gPg9ThKIJaIMHTBGQPgwV1gDiq0A5N6zOQ3LOYahiELgB1GALcy4IMBHndVSAoglqywGoLTegWAPqRxGsmoCSOxggngb5wRaEQWyoH3fhct5PID4HVOwA8gMIg9ggMajcsAUAkSNDYxrHhccAAAAASUVORK5CYII=) top center no-repeat"),
+                content = append($div('content', "clear: both; width: auto; color: black; padding-left: 2px; padding-top: 3px; font-size: 10pt; line-height: 1; font-family: sans-serif;"),
+							contentText = document.createElement('span'))),
+			middleRight = $div('middle_right', "float: left; width: 11px; height: 100px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAABCAYAAAAIN1RAAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAFUlEQVR4nGP4jwYYGBhcgFiKAQsAAE7JEE9Xpf0wAAAAAElFTkSuQmCC)")),
+		append($div(false, "clear:left"),
+			$div('bottom_left', "float: left; width: 11px; height: 15px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAaklEQVR4nGNgwA7Egdj29+/fP/8jASYcin8C8benT59eQxZkxqH4PxCz/fz584Wbm5sHMzMzCz7F/0DEmTNnPr579+6ihoaGLC8vrzAjDsUgAHKiABQLAjEXPsUgAJJnA2JOIGYnoHboAwBe6yTBvYuOcgAAAABJRU5ErkJggg==) center top no-repeat"),
+			bottomMiddle = $div('bottom_middle', "float: left; height: 15px; width: 200px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAALCAYAAAC+jufvAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAF0lEQVR4nGP4DwRMDECAIEBAkpkBHwAA1dQEH0fhLv4AAAAASUVORK5CYII=) center top repeat-x"),
+			$div('bottom_right', "float: left; width: 11px; height: 15px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAbElEQVR4nGP4jwR+//79k4GBwRaIxRmwACZkzpMnT64CqW9A/BObYgaYqb9+/fqRmZmZCBRSBmJ2rIpBVt+9e/dsdnZ2EpCrBcRCQMyITS0j1I0gq98D8Qco/odLsTjUjd+B+BfIZVidMBIAALyLNXntb7YbAAAAAElFTkSuQmCC) center top no-repeat"))
+		);
+	contentText.style.cssText = "display: inline-block;"
+
+	this.element = element;
+	contentText.innerHTML = text;
+	// showing tooltip
+	this.show = function () {
+		document.body.appendChild(tooltip);
+
+		// resetting width and height of tooltip container depending on text, keeping the same aspect ratio
+		var height = contentText.offsetHeight,
+            width = contentText.offsetWidth;
+
+		content.style.height = height + "px";
+		content.style.width = (width + 3) + "px";
+		contentWrapper.style.height = content.offsetHeight + "px";
+		contentWrapper.style.width = content.offsetWidth + "px";
+		topMiddle.style.width = bottomMiddle.style.width = contentWrapper.offsetWidth + "px";
+
+		// adding some height if text doesn't contain inside the container due to simple aspectRatio calculation
+		if (contentWrapper.offsetHeight < content.offsetHeight + logo.offsetHeight + 2 * contentPadding) {
+			contentWrapper.style.height = contentWrapper.offsetHeight + content.offsetHeight + logo.offsetHeight - contentWrapper.offsetHeight + "px";
+		}
+
+		middleLeft.style.height = middleRight.style.height = contentWrapper.offsetHeight + "px";
+
+		// positioning of the tooltip, the main quest
+		positionTooltip();
+		visible = true;
+	};
+
+	// returning tooltip back to memory
+	this.hide = function () {
+		tooltip.parentNode.removeChild(tooltip);
+		visible = false;
+	};
+
+	// positioning the pointer part of the tooltip, at the top or at the bottom
+	function positionTooltipPointer(position) {
+		bottomMiddle.innerHTML = "";
+		topMiddle.innerHTML = "";
+		bottomMiddle.style.backgroundImage = "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAALCAYAAAC+jufvAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGUlEQVR4nGP4DwRMDECAIEDAhRlI/GDABQD0OQVC9JET1wAAAABJRU5ErkJggg==)";
+		topMiddle.style.backgroundImage = "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAALCAYAAAC+jufvAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGElEQVR4nGNgwAOkmICEFsN/IACxGBAEAEx1BEmizFIDAAAAAElFTkSuQmCC)";
+		if (position === "top") {
+			topMiddle.style.backgroundImage = "";
+			append(topMiddle,
+                $div(false, "float:left; height: 15px; width: " + pointerPosition + "px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAALCAYAAAC+jufvAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGElEQVR4nGNgwAOkmICEFsN/IACxGBAEAEx1BEmizFIDAAAAAElFTkSuQmCC) center bottom repeat-x"),
+                $div(false, "float:left; height: 15px; width: 16px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAYAAADtc08vAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAESSURBVHjaxJA9S8NQFEBP6gcqiINOPgjYSSfd4tRFwSGl2TJkqksX/4e4hPwQHRwyJEv+g0gMJLMgDoZAMsgDn8tTJCa20MGzXe69ZzgG3QyALWBDz+9AA3y0D1d7BNvAbhiGFwDj8TjW0ooFWAMOTNM8q+v6uWmaF9M0z4EhsD7v2QD2ACuO41ulSZLkHrD0zvhLsAkcOo5zKaWUXwIppfQ8bwYc6Ta94faBUZ7nD6pFURSPwAgQwEqXYAc49n3/WvUQBMENcKJvf4cTQthlWb72CaqqehNC2O2g3+GiKLpTc+gKOgQs27ZnP8P1IaWUruteAaf6lwkwTdP0SS1IlmUZMAUmhlJKsQQDluT/BZ8DALutDNIS8SQJAAAAAElFTkSuQmCC) center top no-repeat"),
+                $div(false, "float:left; height: 15px; width: " + (contentWrapper.offsetWidth - 16 - pointerPosition) + "px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAALCAYAAAC+jufvAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGElEQVR4nGNgwAOkmICEFsN/IACxGBAEAEx1BEmizFIDAAAAAElFTkSuQmCC) center bottom repeat-x"));
+        } else if (position === "bottom") {
+            bottomMiddle.style.backgroundImage = "";
+            append(bottomMiddle,
+                $div(false, "float:left; height: 15px; width: " + pointerPosition + "px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAALCAYAAAC+jufvAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGUlEQVR4nGP4DwRMDECAIEDAhRlI/GDABQD0OQVC9JET1wAAAABJRU5ErkJggg==) center top repeat-x"),
+                $div(false, "float:left; height: 15px; width: 16px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAPCAYAAADtc08vAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAEQSURBVHjazJAxasNAEEXfREGE1OkWVKjzCezKlTsX7rbYzo0b3yLHcKEz+AQqdAU3CwIXggU3MqhQCF6C0mxAMV4ccJPXDcz/f+bLMAwDD/DEg/wDAxFZicjaWmv/KrLWWhFZi8gKIAdmWuut994Pd/Dee631FpgFLQK8AdOyLPf3DMqy3APToJGfq1IgV0otu647x8Rd152VUsuQnI5LvACtc84VRbGL/V4Uxc4554A2aH6RAAqY13V9uE6v6/oAzMNOEgt5BSbGmM24UO+9N8ZsgEnYiXKz0FhxMVIgz7Js0ff9qe/7U5Zli3FxY55vGFyAtmkaqqp6B2ia5hgrLnZOEn59CfMn8AF8XS9+DwBMPuBnNmT5eQAAAABJRU5ErkJggg==) center bottom no-repeat"),
+                $div(false, "float:left; height: 15px; width: " + (contentWrapper.offsetWidth - 16 - pointerPosition) + "px; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAALCAYAAAC+jufvAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAGUlEQVR4nGP4DwRMDECAIEDAhRlI/GDABQD0OQVC9JET1wAAAABJRU5ErkJggg==) center top repeat-x")
+            );
+        }
+
+	}
+
+	function positionTooltip() {
+		// some helper functions, getting different size parameters of the document
+
+		// absolure position of the element in the document
+		function getElemPosition(elem) {
+			var top = 0,
+                left = 0;
+                
+			while (elem) {
+				top = top + elem.offsetTop;
+				left = left + elem.offsetLeft;
+				elem = elem.offsetParent;
+			}
+            
+			return {
+				top: top,
+				left: left
+			};
+		}
+
+		// amount of vertical space before the currently visible part of the document
+		function getPageScroll() {
+			var xScroll, yScroll;
+			if (window.pageYOffset) {
+				yScroll = window.pageYOffset;
+				xScroll = window.pageXOffset;
+			} else if (document.documentElement && document.documentElement.scrollTop) {
+				yScroll = document.documentElement.scrollTop;
+				xScroll = document.documentElement.scrollLeft;
+			} else if (document.body) {
+				yScroll = document.body.scrollTop;
+				xScroll = document.body.scrollLeft;
+			}
+            
+			return {
+				left: xScroll,
+				top: yScroll
+			};
+		}
+
+		// visible part height
+		function getPageHeight() {
+			var windowHeight;
+			if (window.innerHeight) {
+				windowHeight = window.innerHeight;
+			} else if (document.documentElement && document.documentElement.clientHeight) {
+				windowHeight = document.documentElement.clientHeight;
+			} else if (document.body) {
+				windowHeight = document.body.clientHeight;
+			}
+			return windowHeight;
+		}
+
+		// visible part width
+		function getPageWidth() {
+			var windowWidth;
+			if (window.innerWidth) {
+				windowWidth = window.innerWidth;
+			} else if (document.documentElement && document.documentElement.clientHeight) {
+				windowWidth = document.documentElement.clientWidth;
+			} else if (document.body) {
+				windowWidth = document.body.clientWidth;
+			}
+			return windowWidth;
+		}
+
+		var inputPosition = getElemPosition(that.element),
+            tooltipHeight = tooltip.offsetHeight,
+            tooltipWidth = tooltip.offsetWidth,
+            topInputWindowPosition = inputPosition.top - getPageScroll().top, // vertical position of the element relative to the window
+            leftInputWindowPosition = inputPosition.left - getPageScroll().left, // horizontal position of the element relative to the window
+            bottomInputWindowPosition = getPageHeight() - topInputWindowPosition - that.element.offsetHeight, // free space right to the element
+            rightInputWindowPosition = getPageWidth() - leftInputWindowPosition; // free space bottom to the element
+
+		// horizontal position of the tooltip, in case there is no free space at the right
+		if (rightInputWindowPosition > tooltipWidth + 10) {
+			pointerPosition = 15;
+			tooltip.style.left = inputPosition.left - 5 + "px";
+		} else {
+			pointerPosition = 15 + (tooltipWidth + 10 - rightInputWindowPosition);
+			tooltip.style.left = inputPosition.left - 10 - (tooltipWidth + 5 - rightInputWindowPosition) + "px";
+		}
+
+		// vertical position of the tooltip, what you asked for
+		if (bottomInputWindowPosition > tooltipHeight - 1) {
+			tooltip.style.top = (inputPosition.top + that.element.offsetHeight - 1) + "px";
+			positionTooltipPointer("top");
+		} else {
+			tooltip.style.top = (inputPosition.top - tooltipHeight + 1) + "px";
+			positionTooltipPointer("bottom");
+		}
+	}
+
+	// repositioning tooltip in case of window resize
+	addEvent(window, "resize", function () {
+		if (visible) {
+			positionTooltip();
+		}
+	});
+
+	addEvent(close, "click", function () {
+		that.hide();
+	});
+}
+</SCRIPT>
+
+<SCRIPT id=KasperskyLabVirtualKeyboardJavascriptExtension203 type=text/javascript>var KasperskyLabVirtualKeyboard = (function (ns) 
+{
+
+ns.OnceTimedTooltip = function(window, text)
+{
+	this.IconDelayHideTimeoutMs = 3 * 1000;
+	this.TooltipShownAttribute = 'kasperskyVirtualKeyboardTooltipShown';
+	this.TooltipShownValue = 'yes';
+
+	this.m_window = window;
+	this.m_text = text;
+	this.m_tooltip = null;
+	this.m_hideTimer = null;
+
+	this.show = function(element)
+	{
+		var document = element.ownerDocument;
+		
+		var tooltipShown = document.body.attributes.getNamedItem(this.TooltipShownAttribute);
+		if (tooltipShown == null)
+		{
+			this.m_tooltip = new KasperskyVirtualKeyboardTooltip(element, this.m_text, this.m_window, document);
+			this.m_tooltip.show();
+
+			document.body.setAttribute(this.TooltipShownAttribute, this.TooltipShownValue);
+
+			var thisObject = this;
+			this.m_hideTimer = setTimeout(function() { thisObject.hide(); }, this.IconDelayHideTimeoutMs);
+		}
+	}
+
+	this.hide = function()
+	{
+		if (this.m_hideTimer)
+		{
+			clearTimeout(this.m_hideTimer);
+			this.m_hideTimer = null;
+		}
+
+		if (this.m_tooltip)
+		{
+			this.m_tooltip.hide();
+			this.m_tooltip = null;
+		}
+	}
+}
+
+return ns;
+}(KasperskyLabVirtualKeyboard || {}));
+</SCRIPT>
+
+<SCRIPT id=KasperskyLabVirtualKeyboardJavascriptExtension204 type=text/javascript>var KasperskyLabVirtualKeyboard = (function (ns) 
+{
+
+ns.tooltip = new TooltipExtension();
+
+function TooltipExtension()
+{
+	var m_tooltip = null;
+
+	this.enable = function()
+	{
+		try
+		{
+			require(!!document.activeElement, 'No element has focus');
+
+			ensureTooltipIsCreated();
+			m_tooltip.show(document.activeElement);
+		}
+		catch (e)
+		{
+			traceError('Cannot enable tooltip: ' + e.message);
+		}
+	}
+
+	this.disable = function()
+	{
+		try
+		{
+			m_tooltip.hide();
+		}
+		catch (e)
+		{
+			traceError('Cannot disable tooltip: ' + e.message);
+		}
+	}        
+
+	function ensurePluginObjectIsCreated()
+	{
+		if (!KasperskyLabVirtualKeyboard.plugin)
+			KasperskyLabVirtualKeyboard.plugin = new ActiveXObject('Kaspersky.IeVirtualKeyboardPlugin.JavascriptApi');
+	}
+
+	function ensureTooltipIsCreated()
+	{
+		ensurePluginObjectIsCreated();
+		if (!m_tooltip)
+			m_tooltip = new KasperskyLabVirtualKeyboard.OnceTimedTooltip(window, KasperskyLabVirtualKeyboard.plugin.GetLocalizedString("TooltipText", "Secure keyboard input is enabled"))	
+	}
+}
+
+// TODO: move this function to a common place
+function require(condition, message)
+{
+	if (!condition)
+	{
+		throw new Error(message ? message : 'Requirement failure');
+	}
+}
+
+// TODO: move this function to a common place
+function traceError(msg)
+{
+    if (console && console.error)
+        console.error(msg);
+}
+
+return ns;
+}(KasperskyLabVirtualKeyboard || {}));
+</SCRIPT>
+
+<SCRIPT id=KasperskyLabVirtualKeyboardJavascriptExtension200 type=text/javascript>var KasperskyLabVirtualKeyboard = (function (ns) 
+{
+    'use strict';
+	ns.VirtualKeyboardIconInjector = function(window, iconData) {
+		var m_iconCss = 'z-index: 10000; display:inline-block; cursor:pointer; position:absolute; width:16px; height:16px; background-image: url(' + iconData + ');';
+
+		// some helper functions with syntax sugar
+		var span = function(document, cssText) {
+			var span = document.createElement('span');
+			span.style.cssText = cssText || '';
+			return span;
+		};
+		
+		var addEvent, removeEvent;
+		if (window.addEventListener) {
+			addEvent = function(elem, evType, fn) {
+				elem.addEventListener(evType, fn, false);
+			}; 
+			removeEvent = function(elem, evType, fn) {
+				elem.removeEventListener(evType, fn, false);
+			}; 
+		} else {
+			addEvent = function(elem, evType, fn) {
+				elem.attachEvent('on' + evType, fn);
+			};
+			removeEvent = function(elem, evType, fn) {
+				elem.detachEvent('on' + evType, fn);
+			};
+		}
+		
+		var getStyle = function(element, cssRule, document) {
+			var strValue = "";
+			if (document.defaultView && document.defaultView.getComputedStyle) {
+				strValue = document.defaultView.getComputedStyle(element, "").getPropertyValue(cssRule);
+			} else if (element.currentStyle) {
+				cssRule = cssRule.replace(/\-(\w)/g, function (strMatch, p1){
+					return p1.toUpperCase();
+				});
+				strValue = element.currentStyle[cssRule];
+			}
+			return strValue;
+		};
+		
+		var getClientWidth = function(element, document) {
+			var width = parseInt(getStyle(element, 'width', document)),
+				paddingLeft = parseInt(getStyle(element, 'padding-left', document)),
+				paddingRight = parseInt(getStyle(element, 'padding-right', document));
+			
+			return width + paddingLeft + paddingRight;
+		}
+		
+		function Icon(document, element, callback) {
+			this.element = span(document, m_iconCss);
+			this.input = element;
+			var that = this;
+		
+			addEvent(this.element, 'mouseover', function(){element.style.opacity = 0.7;});
+			addEvent(this.element, 'mouseout', function(){element.style.opacity = 1;});
+			if (callback) {
+				addEvent(this.element, 'click', callback);
+			}			
+			
+			this.reposition = function() {that.position();};
+		}
+		
+		Icon.prototype.position = function() {
+			// absolute position of the element in the document
+			function getElemPosition(elem) {
+				var top = 0, 
+				left = 0;
+				while (elem) {
+					top = top + elem.offsetTop;
+					left = left + elem.offsetLeft;
+					elem = elem.offsetParent;
+				}
+				return {
+					top: top,
+					left: left
+				};
+			}		
+			
+			var inputPosition = getElemPosition(this.input),
+                inputWidth = this.input.offsetWidth,
+                inputHeight = this.input.offsetHeight;
+			
+			this.element.style.left = inputPosition.left + inputWidth - 20 + 'px';
+			this.element.style.top = inputPosition.top + (inputHeight - 16)/2 + 'px';	
+		};
+		
+		// showing icon
+		this.showIcon = function(element, callback) {
+			var document = element.ownerDocument,
+                icon,
+                oldClientWidth,
+                oldOffsetWidth,
+                oldMarginRight,
+                oldMarginLeft,
+				oldPaddingLeft,
+                currentPaddingRight,
+                currentPaddingLeft;
+                
+			if (!document) {
+                throw 'Cannot add virtual keyboard icon: invalid document';
+            }				
+                
+            icon = new Icon(document, element, callback);
+			
+			document.body.appendChild(icon.element);
+            
+			oldClientWidth = getClientWidth(element, document);
+            oldOffsetWidth = element.offsetWidth;
+            oldMarginRight = getStyle(element, 'margin-right', document);
+            oldMarginLeft = getStyle(element, 'margin-left', document);
+			oldPaddingLeft = getStyle(element, 'padding-left', document);
+			
+			icon.oldWidth = element.style.width || '';
+			icon.oldMarginRight = element.style.marginRight || '';
+			icon.oldMarginLeft = element.style.marginLeft || '';
+			icon.oldPaddingRight = element.style.paddingRight || '';
+			icon.oldPaddingLeft = element.style.paddingLeft || '';
+            
+			element.style.paddingRight = (parseInt(getStyle(element, 'padding-right', document), 0) + 0 ) + 'px';
+			
+			// fixing element width hack
+			if (oldClientWidth !== getClientWidth(element, document)) {
+                
+                // CSS3 box-sizing property, brings new problems with it
+                if (getStyle(element, 'box-sizing', document) === "border-box") {
+                    element.style.width = oldOffsetWidth + 'px';
+                } else {
+                    currentPaddingRight = parseInt(getStyle(element, 'padding-right', document), 0);
+                    currentPaddingLeft = parseInt(getStyle(element, 'padding-left', document), 0);
+                    
+                }				
+			}     
+
+            if (getStyle(element, 'margin-right', document) !== oldMarginRight) {
+                element.style.marginRight = oldMarginRight;
+                element.style.marginLeft = oldMarginLeft;				
+            }
+			
+			if (getStyle(element, 'padding-left', document) !== oldPaddingLeft) {
+				element.style.paddingLeft = oldPaddingLeft;
+			}
+            
+			icon.position();	
+			addEvent(window, "resize", icon.reposition);
+			
+			return icon;
+		};
+		
+		// returning icon back to memory
+		this.hideIcon = function(icon) {
+			if (!icon) {
+                return; // Icon has already been hidden, nothing to do
+            }
+				
+			icon.element.parentNode.removeChild(icon.element);
+			// resetting styles;
+            icon.input.style.marginRight = icon.oldMarginRight;
+            icon.input.style.marginLeft = icon.oldMarginLeft;
+			icon.input.style.paddingLeft = icon.oldPaddingLeft;
+			icon.input.style.paddingRight = icon.oldPaddingRight;
+			icon.input.style.width = icon.oldWidth;
+			removeEvent(window, "resize", icon.reposition);
+		};
+	};
+
+	return ns;
+}(KasperskyLabVirtualKeyboard || {}));
+
+</SCRIPT>
+
+<SCRIPT id=KasperskyLabVirtualKeyboardJavascriptExtension201 type=text/javascript>var KasperskyLabVirtualKeyboard = (function (ns) 
+{
+
+ns.icon = new IconExtension(window, document);
+
+function IconExtension(window, document)
+{
+	var IconData = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAAcElEQVR4nGNgGAWM/SuWTmBkZMgGsllI0Pfn/3+GqYUR0QVMZGgGARaoPgYmmOaC8GhGUmiYPsYJK5f+J9F2OAAZxoTMIdEFDFRxAQPIAGRDcBmIrgbGB7ngNwPpsQACf4AuYGUCxSeIQ6pmqL7hAAA7jDvnvqpzHQAAAABJRU5ErkJggg==';
+	var HideTimeout = 500;
+
+	var m_hideTimer = 0;
+	var m_this = this;
+    var m_lastFocusedElementCaretPos = 0;
+	var m_icon = null;
+	var m_iconInjector = new KasperskyLabVirtualKeyboard.VirtualKeyboardIconInjector(window, IconData);
+
+	this.enable = function()
+	{
+		try
+		{
+			require(!!document.activeElement, 'No element has focus');
+
+			addKeyboardIcon(document.activeElement);
+		}
+		catch (e)
+		{
+			traceError('Cannot enable icon: ' + e.message);
+		}
+	}
+
+	this.disable = function()
+	{
+		try
+		{
+			enableHideTimer();
+		}
+		catch (e)
+		{
+			traceError('Cannot disable icon: ' + e.message)
+		}
+	}
+
+	function ensurePluginObjectIsCreated()
+	{
+		if (!KasperskyLabVirtualKeyboard.plugin)
+			KasperskyLabVirtualKeyboard.plugin = new ActiveXObject('Kaspersky.IeVirtualKeyboardPlugin.JavascriptApi');
+	}
+
+	function getCaretPositionInInput(inputElement)
+	{
+		var caretPosition = 0;
+		if (document.selection)
+		{ 
+			var selection = document.selection.createRange();
+			selection.moveStart ('character', -inputElement.value.length);
+			caretPosition = selection.text.length;
+		}
+		else if (inputElement.selectionStart || inputElement.selectionStart == '0')
+		{
+			caretPosition = inputElement.selectionStart;
+		}
+		return caretPosition;
+	}
+
+	function getCaretPositionOrZero(element)
+	{
+		if (element.tagName.toUpperCase() === 'INPUT')
+			return getCaretPositionInInput(element);
+		return 0;
+	}
+
+	function setFocusAndCaretPositionInInput(element, caretPosition)
+	{
+		if (document.selection)
+		{
+			element.focus();
+			var selection = document.selection.createRange();
+			selection.moveStart('character', -element.value.length);
+			selection.moveStart('character', caretPosition);
+			selection.moveEnd('character', 0);
+			selection.select();
+		}
+		else if (element.selectionStart || element.selectionStart == '0')
+		{
+			element.selectionStart = caretPosition;
+			element.selectionEnd = caretPosition;
+			element.focus();
+		}
+	}
+
+	function setFocusAndCaretPosition(element, caretPosition)
+	{
+		if (element.tagName.toUpperCase() === 'INPUT')
+			setFocusAndCaretPositionInInput(element, caretPosition);
+		else
+			element.focus();
+	}
+
+	function enableHideTimer()
+	{
+		removeHideTimer();
+		m_hideTimer = setTimeout(removeKeyboardIcon, HideTimeout);
+	}
+
+	function removeHideTimer()
+	{
+		if (m_hideTimer)
+		{
+			clearTimeout(m_hideTimer);
+			m_hideTimer = 0;
+		}
+	}
+
+	function removeKeyboardIcon()
+	{
+		try
+		{
+			m_iconInjector.hideIcon(m_icon);
+			m_icon = null;
+		}
+		catch (e)
+		{
+			traceError('Cannot remove keyboard icon: ' + e.message);
+		}
+    }
+
+    function subscribeToOneTimeEvent(element, eventId, handler)
+    {
+        var autoDetachHandler = function ()
+        {
+            element.detachEvent(eventId, autoDetachHandler);
+            handler();
+        }
+		element.attachEvent(eventId, autoDetachHandler);
+    }
+
+	function addKeyboardIcon(inputElement)
+	{
+	    if (!inputElement)
+			return;
+		removeHideTimer();
+		removeKeyboardIcon();
+
+		m_icon = m_iconInjector.showIcon(inputElement, function() { enableVirtualKeyboardWidgetNoThrow(inputElement); } );
+        subscribeToOneTimeEvent(inputElement, 'onbeforedeactivate', function() { saveInputCaretPositionNoThrow(inputElement); } );
+	}
+
+	function enableVirtualKeyboardWidget(inputElement)
+    {
+        setFocusAndCaretPosition(inputElement, m_lastFocusedElementCaretPos);
+		ensurePluginObjectIsCreated();
+		KasperskyLabVirtualKeyboard.plugin.ShowVirtualKeyboardWidget(document.URL);
+	}
+
+	function enableVirtualKeyboardWidgetNoThrow(inputElement)
+	{
+		try
+		{
+		    enableVirtualKeyboardWidget(inputElement);
+		}
+		catch (e)
+		{
+			traceError('Cannot call virtual keyboard plugin: ' + e.message);
+		}
+	}
+
+	function saveInputCaretPosition(inputElement)
+    {
+        m_lastFocusedElementCaretPos = getCaretPositionOrZero(inputElement);
+	}
+
+	function saveInputCaretPositionNoThrow(inputElement)
+    {
+        try
+        {
+            saveInputCaretPosition(inputElement);
+	    }
+	    catch (e)
+        {
+			traceError('Cannot save input caret position: ' + e.message);
+	    }
+	}
+}
+
+// TODO: move this function to a common place
+function require(condition, message)
+{
+	if (!condition)
+	{
+		throw new Error(message ? message : 'Requirement failure');
+	}
+}
+
+// TODO: move this function to a common place
+function traceError(msg)
+{
+	if (console && console.error)
+	    console.error(msg);
+}
+
+return ns;
+}(KasperskyLabVirtualKeyboard || {}));
+</SCRIPT>
+</HEAD>
+<BODY kasperskyVirtualKeyboardTooltipShown="yes">
+<FORM id=Form1 method=post action=TradePlace.aspx?reqid=49531504&amp;ASID=AS14&amp;ViewEventID=236274 autocomplete="off">
+<DIV class=aspNetHidden><INPUT id=__VIEWSTATE value=/wEPDwUJNDQ0MTg0MTcwD2QWAmYPZBYCAgEPZBYEAgEPZBYEZg8PFgIeB1Zpc2libGVoZBYCAgEPFgIeBGhyZWYFDH4vTG9naW4uYXNweGQCAg9kFgQCAQ8WBB4JaW5uZXJodG1sBXPQmtGA0L7RgtC+0LIg0JrQvtC90YHRgtCw0L3RgtC40L0g0JLQuNGC0LDQu9GM0LXQstC40Ycg0JjQndCdOiA0MzQ1MjY2MjYzICjQs9C+0LvQvtCy0L3QsNGPINC+0YDQs9Cw0L3QuNC30LDRhtC40Y8pHgV0aXRsZQWOAdCe0LHRidC10YHRgtCy0L4g0YEg0J7Qs9GA0LDQvdC40YfQtdC90L3QvtC5INCe0YLQstC10YLRgdGC0LLQtdC90L3QvtGB0YLRjNGOICAi0J/RgNC+0LjQt9Cy0L7QtNGB0YLQstC10L3QvdCw0Y8g0JrQvtC80L/QsNC90LjRjyAi0KHRhNC10YDQsCJkAgMPFgIfAgUx0KHRgNC+0Log0LTQtdC50YHRgtCy0LjRjyDQv9Cw0YDQvtC70Y8g0LjRgdGC0LXQumQCBQ9kFgJmD2QWAgIFD2QWAgIBD2QWAmYPZBYCAgkPDxYEHg1PbkNsaWVudENsaWNrBTFyZXR1cm4gVHJhZGVQbGFjZV9TaWduUGFuZWxfc2lnblBhbmVsX3NhdmVTaWduKCk7HgRUZXh0BSjQn9C+0LTQv9C40YHQsNGC0Ywg0Lgg0YHQvtGF0YDQsNC90LjRgtGMZGRkoGGaXiRMd4Imtkoc9FkRuFTmsVk= type=hidden name=__VIEWSTATE> </DIV>
+<DIV id=page-back jQuery1474871264684="1">
+<DIV id=page>
+<DIV id=login-back>
+<DIV id=login-datetime>
+<DIV id=datetime>
+<SCRIPT type=text/javascript>
+$(document).ready(function () {
+    StartUpdateTime("AS14");
+});
+</SCRIPT>
+<LABEL id=newDate>26.09.2016</LABEL><LABEL id=newTime>09:37:49</LABEL><LABEL id=timeError>*</LABEL></DIV>
+<DIV id=login>
+<DIV id=loginctrl_panLogOff class=logincont><A id=loginctrl_link title='Общество с Ограниченной Ответственностью  "Производственная Компания "Сфера"' href="../Default.aspx">Кротов Константин Витальевич ИНН: 4345266263 (головная организация)</A> <A id=loginctrl_warninglink class=redInfo title="Сменить пароль" href="../Confirm/ChangePassword.aspx">Срок действия пароля истек</A> &nbsp;|&nbsp; <A id=loginctrl_out href="../../Default.aspx?LogOut=1">Выйти</A> </DIV></DIV></DIV></DIV>
+<DIV id=header-back>
+<DIV id=header>
+<DIV id=logo><A id=linkToDefault href="../../Default.aspx"><IMG id=logoImg alt=Сбербанк-АСТ src="../../img/bg_logo.png"></A> </DIV>
+<DIV id=motto>ЭЛЕКТРОННАЯ&nbsp;ТОРГОВАЯ&nbsp;ПЛОЩАДКА </DIV><SPAN style="DISPLAY: none" id=currentDate>26.09.2016</SPAN> <SPAN style="DISPLAY: none" id=currentTime>Monday, September 26, 2016 9:37:45 AM</SPAN><SPAN style="DISPLAY: none" id=ShortTime>9:37:45</SPAN>
+<DIV id=mainmenu_l></DIV>
+<DIV id=mainmenu>﻿
+<UL class=nav>
+<LI><A href="/default.aspx">Главная</A>
+<UL>
+<LI><A href="/Content.aspx?tid=1">Новости</A></LI>
+<LI><A href="/Page.aspx?cid=36">Регламент работы ЭТП</A></LI>
+<LI><A href="/Page.aspx?cid=2304">Законодательство</A></LI>
+<LI><A href="/Page.aspx?cid=2193">Инструкции</A></LI>
+<LI><A href="/FAQ.aspx">Вопросы и ответы</A></LI>
+<LI><A href="/SBCAAuthorizeList.aspx">Получение ЭЦП</A></LI>
+<LI><A href="/TestDS.aspx">Проверка ЭЦП</A></LI></UL></LI>
+<LI><A style="CURSOR: default" href="#">Аукционы</A>
+<UL>
+<LI><A href="/tradezone/Supplier/PurchaseRequestList.aspx">Заявки на участие в аукционе</A></LI>
+<LI><A href="/tradezone/Supplier/PurchaseList.aspx">Реестр объявленных аукционов</A></LI>
+<LI><A href="/tradezone/supplier/trade/PublicTradeList.aspx">Реестр готовящихся торгов Сбербанка России</A></LI>
+<LI><A href="/tradezone/Supplier/ImplementationPurchDocRequest.aspx">Отчет об активности в аукционах</A></LI></UL></LI>
+<LI><A style="CURSOR: default" href="#">Личный кабинет</A>
+<UL>
+<LI><A href="/tradezone/EventList.aspx">Календарь событий</A></LI>
+<LI><A href="/tradezone/Confirm/ChangePassword.aspx">Смена пароля</A></LI>
+<LI><A href="/tradezone/reports/ReportList.aspx">Отчеты</A></LI>
+<LI><A href="/tradezone/Supplier/Restrict/SupplierEdit.aspx">Изменение данных</A></LI>
+<LI><A href="/tradezone/Trust/TrustList.aspx">Реестр пользователей</A></LI>
+<LI><A href="/tradezone/Trust/RegisteredPersonList.aspx ">Заявки на регистрацию пользователей</A></LI>
+<LI><A href="/tradezone/subscribe/UnitedPurchase/Subscribe.aspx">Подписка на рассылку по торгам из единой базы</A></LI>
+<LI><A href="/tradezone/Confirm/ProlongCert.aspx">Запрос на перевыпуск сертификата ЭЦП</A></LI>
+<LI><A href="/tradezone/Supplier/Restrict/SupplierReRequest.aspx">Заявление на аккредитацию на новый срок</A></LI>
+<LI><A href="/tradezone/Confirm/utPregister.aspx">Перенос данных на УТП</A></LI>
+<LI><A href="/tradezone/Settings.aspx">Персональные настройки</A></LI></UL></LI>
+<LI><A style="CURSOR: default" href="#">&nbsp;&nbsp; Счета &nbsp;&nbsp; </A>
+<UL>
+<LI><A href="/tradezone/accounts/statement.aspx">Выписка по лицевому счету</A></LI>
+<LI><A href="/tradezone/accounts/CashOutList.aspx">Заявления на вывод денежных средств</A></LI>
+<LI><A href="/tradezone/supplier/AccinvoiceList.aspx">Реестр Актов и Счетов-фактур</A></LI>
+<LI><A href="/Page.aspx?cid=2308">Реквизиты для перечисления денежных средств</A></LI></UL></LI>
+<LI><A style="CURSOR: default" href="#">Документы</A>
+<UL>
+<LI><A href="/tradezone/Documents/Inbox.aspx">Входящие документы</A></LI>
+<LI><A href="/tradezone/Documents/Outbox.aspx">Исходящие документы</A></LI>
+<LI><A href="/tradezone/Documents/Drafts.aspx">Черновики</A></LI>
+<LI><A href="/tradezone/Documents/RejectedDocs.aspx">Возвращенные документы</A></LI>
+<LI><A href="/tradezone/Documents/OutboxOffers.aspx">Реестр ценовых предложений</A></LI>
+<LI><A href="/tradezone/Documents/NoticeList.aspx">Реестр уведомлений</A></LI></UL></LI>
+<LI><A style="CURSOR: default" href="#">&nbsp;&nbsp; ЭДО &nbsp;&nbsp; </A>
+<UL>
+<LI><A href="/tradezone/EDMS/EDMS_Request.aspx">Заявление на подключение к ЭДО</A></LI>
+<LI><A href="/tradezone/EDMS/EDMS_Inbox.aspx">ЭДО Уведомления</A></LI>
+<LI><A href="/tradezone/EDMS/EDMS_SendFile.aspx?ASID=FS2">ЭДО Отправить файл</A></LI></UL></LI>
+<LI><A style="CURSOR: default" href="#">Контракты</A>
+<UL>
+<LI><A href="/tradezone/Supplier/ContractList.aspx">Мои контракты</A></LI>
+<LI><A href="/tradezone/Supplier/ImplementationList.aspx">Исполнение контрактов</A></LI></UL></LI>
+<LI><A style="CURSOR: default" href="#">Финуслуги</A>
+<UL>
+<LI><A href="/tradezone/Supplier/BankGuaranteeRequestListOrg2.aspx">Запросы на банковскую гарантию</A></LI>
+<LI><A href="/tradezone/Supplier/PartnersCredit.aspx">Условия использования кредитных средств</A></LI>
+<LI><A href=" /tradezone/Supplier/PurchaseCreditRequestList.aspx">Отложенные (кредитные) заявки</A></LI></UL></LI>
+<LI><A style="CURSOR: default" href="#">Филиалы</A>
+<UL>
+<LI><A href="/tradezone/HeadOrg/Admin/BranchesList.aspx">Реестр филиалов</A></LI>
+<LI><A href="/tradezone/HeadOrg/Admin/TrustBranchesList.aspx">Реестр пользователей</A></LI>
+<LI><A href="/tradezone/HeadOrg/PersonTable/BranchesPurchaseRequestList.aspx">Заявки филиалов на участие в аукционе</A></LI>
+<LI><A href="/tradezone/HeadOrg/Contract/BranchesContractList.aspx">Реестр контрактов поставщика (филиалы)</A></LI>
+<LI><A href="/tradezone/Accounts/BranchesStatement.aspx">Выписка по лицевым счетам филиалов</A></LI></UL></LI>
+<LI><A style="CURSOR: default" href="#">О компании</A>
+<UL>
+<LI><A href="/Page.aspx?cid=41">Сведения о компании</A></LI>
+<LI><A href="/Content.aspx?cid=2294">Политика в области качества</A></LI>
+<LI><A href="/Content.aspx?tid=8">Пресс-релизы</A></LI>
+<LI><A href="/Content.aspx?tid=10">СМИ о нас</A></LI>
+<LI><A href="/Page.aspx?cid=1082">Вакансии</A></LI></UL></LI>
+<LI><A style="CURSOR: default" href="#">Обучение</A>
+<UL>
+<LI><A href="/Page.aspx?cid=281">Учебный центр «Сбербанк-АСТ»</A></LI>
+<LI><A href="/SeminarList.aspx">График семинаров</A></LI>
+<LI><A href="/Page.aspx?cid=2247">Наши партнеры</A></LI>
+<LI><A href="/Page.aspx?cid=2248">Вопросы-ответы об обучении</A></LI>
+<LI><A href="/Page.aspx?cid=2332">Конференции</A></LI></UL></LI></UL></DIV>
+<DIV id=mainmenu_r></DIV></DIV></DIV>
+<DIV id=content-back>
+<DIV id=content>
+<H2></H2>
+<DIV id=phWorkZone_dataPanel><INPUT id=phWorkZone_signValue type=hidden name=ctl00$phWorkZone$signValue> <INPUT id=phWorkZone_xmlData value='<purchaseoffer><MyNewPriceContainer><reqid>49531504</reqid><pricesign>1.00</pricesign><purchaseID>4381020</purchaseID><purchaseCode>0113200001416000384</purchaseCode><purchaseName>Выполнение работ по капитальному ремонту крыши и&#13;&#10;замене оконных блоков здания МБОУ «Кожильская средняя общеобразовательная школа»&#13;&#10;в д.Кожило Балезинского района Удмуртской Республики</purchaseName><requestNo>11</requestNo><supplierName>Общество с Ограниченной Ответственностью "Производственная Компания "Сфера"</supplierName></MyNewPriceContainer><reqno>11</reqno><suppname>Общество с Ограниченной Ответственностью "Производственная Компания "Сфера"</suppname><strauctionbegindate>26.09.2016 09:15:00</strauctionbegindate><auctionbegindate>2016-09-26T09:15:00</auctionbegindate><strauctionenddate>26.09.2016 09:44:50</strauctionenddate><strjavascriptauctionenddate>26.09.2016 09:44:50</strjavascriptauctionenddate><auctionenddate>2016-09-26T09:44:50.603</auctionenddate><strpurchstate>Идут торги</strpurchstate><purchstate>active</purchstate><bestpricesign>1.00</bestpricesign><mypricesign>1.00</mypricesign><purchname>Выполнение работ по капитальному ремонту крыши и&#13;&#10;замене оконных блоков здания МБОУ «Кожильская средняя общеобразовательная школа»&#13;&#10;в д.Кожило Балезинского района Удмуртской Республики</purchname><purchcode>0113200001416000384</purchcode><purchCurrencyName>RUB</purchCurrencyName><bestprice>774749.95</bestprice><newprice>724249.90</newprice><myprice>969600.92</myprice><requestkind>Предложить новую цену контракта с учетом шага аукциона</requestkind><purchamount>1010001.00</purchamount><isIncrease>false</isIncrease><purchpricestepmin>5050.01</purchpricestepmin><purchpricestepmax>50500.05</purchpricestepmax><purchid>4381020</purchid><isTradePanelVisible>on</isTradePanelVisible><offers><purchoffer><offerPlace>1</offerPlace><MyOfferMark /><offerPrice>774749.95</offerPrice><offerKind>контракт</offerKind><reqno>2</reqno><offerTime>26.09.2016 09:34:50</offerTime></purchoffer><purchoffer><offerPlace>2</offerPlace><MyOfferMark /><offerPrice>779799.96</offerPrice><offerKind>контракт</offerKind><reqno>6</reqno><offerTime>26.09.2016 09:32:24</offerTime></purchoffer><purchoffer><offerPlace>3</offerPlace><MyOfferMark /><offerPrice>789899.98</offerPrice><offerKind>контракт</offerKind><reqno>14</reqno><offerTime>26.09.2016 09:30:19</offerTime></purchoffer><purchoffer><offerPlace>4</offerPlace><MyOfferMark /><offerPrice>794949.99</offerPrice><offerKind>контракт</offerKind><reqno>16</reqno><offerTime>26.09.2016 09:27:12</offerTime></purchoffer><purchoffer><offerPlace>5</offerPlace><MyOfferMark /><offerPrice>800000.00</offerPrice><offerKind>контракт</offerKind><reqno>8</reqno><offerTime>26.09.2016 09:26:26</offerTime></purchoffer><purchoffer><offerPlace>6</offerPlace><MyOfferMark /><offerPrice>824249.90</offerPrice><offerKind>контракт</offerKind><reqno>4</reqno><offerTime>26.09.2016 09:24:36</offerTime></purchoffer><purchoffer><offerPlace>7</offerPlace><MyOfferMark /><offerPrice>879799.96</offerPrice><offerKind>контракт</offerKind><reqno>15</reqno><offerTime>26.09.2016 09:23:32</offerTime></purchoffer><purchoffer><offerPlace>8</offerPlace><MyOfferMark>*</MyOfferMark><offerPrice>969600.92</offerPrice><offerKind>контракт</offerKind><reqno>11</reqno><offerTime>26.09.2016 09:17:42</offerTime></purchoffer><purchoffer><offerPlace>9</offerPlace><MyOfferMark /><offerPrice>1004950.99</offerPrice><offerKind>контракт</offerKind><reqno>10</reqno><offerTime>26.09.2016 09:15:18</offerTime></purchoffer></offers></purchaseoffer>' type=hidden name=ctl00$phWorkZone$xmlData> 
+<TABLE class=noborder width="100%">
+<TBODY>
+<TR>
+<TD><A id=myOffersLink href="/tradezone/Documents/OutboxOffers.aspx?id=49531504&amp;ASID=AS14">Мои ценовые предложения</A> </TD></TR>
+<TR>
+<TD>
+<DIV id=XMLContainer><!-- Форма отображатеся при возникновении ошибки в базе данных при подаче ценового предложения -->
+<DIV style="DISPLAY: none" id=phWorkZone_errorForm content="node:Errors" jQuery1474871264684="14">
+<P content="node:Error"><SPAN content="leaf:ErrorMessage"></SPAN></P></DIV><!-- Конец формы -->
+<DIV id=phWorkZone_successfulForm content="node:purchaseoffer">
+<P><SPAN><B>Электронный аукцион (<SPAN content="leaf:strPurchState">Идут торги</SPAN>)</B></SPAN> </P>
+<DIV>
+<DIV style="WIDTH: 39%; FLOAT: left">
+<TABLE class=dt>
+<TBODY>
+<TR>
+<TD class=th>Общая информация </TD></TR>
+<TR style="HEIGHT: 231px">
+<TD>Наименование участника электронного аукциона : <B><SPAN id=suppName content="leaf:suppName">Общество с Ограниченной Ответственностью "Производственная Компания "Сфера"</SPAN></B><BR>Номер извещения об аукционе : <B><SPAN id=purchCode content="leaf:purchCode">0113200001416000384</SPAN></B><BR>Наименование объекта закупки : <B><SPAN id=purchName content="leaf:purchName">Выполнение работ по капитальному ремонту крыши и замене оконных блоков здания МБОУ «Кожильская средняя общеобразовательная школа» в д.Кожило Балезинского района Удмуртской Республики</SPAN></B><BR><BR>Начальная цена : <B><SPAN id=purchAmount content="leaf:purchAmount">1010001.00</SPAN><SPAN content="leaf:purchCurrencyName">RUB</SPAN></B><INPUT id=isIncrease value=false type=hidden content="leaf:isIncrease"> <INPUT id=robotstatus onchange="if ($(this).val() == '1') $('#ActiveRobot').attr('checked', 'checked'); else $('#ActiveRobot').attr('checked', '');" type=hidden content="leaf:robotstatus"> <BR><SPAN class=red>Текущая цена : </SPAN><B><SPAN id=BestPrice class=red content="leaf:BestPrice">774749.95</SPAN></B> <BR><SPAN>Текущее снижение : </SPAN><B><SPAN id=spnDiscount>23.29</SPAN>%</B> <BR>
+<DIV style="BORDER-BOTTOM: 1px solid; BORDER-LEFT: 1px solid; WIDTH: 200px; HEIGHT: 10px; BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid">
+<DIV style="BACKGROUND-COLOR: blue; WIDTH: 76.7%; HEIGHT: 10px" id=colorPercent></DIV></DIV><BR>Ваше последнее ценовое предложение : <B><SPAN id=myPrice content="leaf:myPrice">969600.92</SPAN></B><BR>Ваша текущая позиция : <B><SPAN id=myPlace>8</SPAN></B><INPUT id=hdnBeginDate value="26.09.2016 09:15:00" type=hidden content="leaf:strauctionbegindate"> <BR><SPAN style="CURSOR: help" id=titleEndAuction class=red title="Информация получена на момент последнего обновления">Время до окончания : </SPAN><BR><STRONG style="CURSOR: help" id=spnTomeDiff class=red title="Информация получена на момент последнего обновления">07 минут 05 секунд </STRONG></TD></TR></TBODY></TABLE>
+<DIV id=open-ads-grnt><BR><IMG id=ads-grnt-btn alt=реклама src="/docs/banners/banner_guarantee_200x20.png" jQuery1474871264684="5"> 
+<SCRIPT type=text/javascript>
+											$(function () {
+												$("#ads-grnt").dialog({ autoOpen: false, width: 640, modal: true, closeOnEscape: true, title: "Реклама: Банковские гарантии" });
+												$("#ads-grnt-btn").click(function() { $("#ads-grnt").dialog("open"); return false; });
+											});
+										</SCRIPT>
+</DIV></DIV>
+<DIV style="WIDTH: 60%; FLOAT: right">
+<DIV style="WIDTH: 49%; FLOAT: left">
+<TABLE style="MARGIN-BOTTOM: 9px" class=dt>
+<TBODY>
+<TR>
+<TD class=th>Лучшее предложение </TD></TR>
+<TR style="HEIGHT: 70px">
+<TD>Время подачи предложения : <SPAN id=bestTime>26.09.2016 09:34:50</SPAN><BR>Предложенная цена : <SPAN id=BestPrice2>774749.95</SPAN></TD></TR></TBODY></TABLE></DIV>
+<DIV style="WIDTH: 49%; FLOAT: right">
+<TABLE style="MARGIN-BOTTOM: 9px" class=dt>
+<TBODY>
+<TR>
+<TD class=th>Информация по времени </TD></TR>
+<TR style="HEIGHT: 70px">
+<TD>Продолжительность : <SPAN id=longTime class=red>22 минуты 44 секунды </SPAN><BR>Расчетные дата и время окончания : <SPAN id=AuctionEndDate class=red content="leaf:strAuctionEndDate">26.09.2016 09:44:50</SPAN></TD></TR></TBODY></TABLE></DIV>
+<DIV style="PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 1px; PADDING-TOP: 0px" class=clear></DIV>
+<DIV style="MARGIN-TOP: 0px; PADDING-TOP: 0px"><INPUT id=isTradePanelVisible value=on type=hidden content="leaf:isTradePanelVisible"> 
+<TABLE style="MARGIN-TOP: 0px; PADDING-TOP: 0px" id=tradePanelVisible class=dt>
+<TBODY>
+<TR>
+<TD class=th>Предложение о цене контракта по заявке&nbsp; <SPAN id=phWorkZone_Span1 content="leaf:reqNo">11</SPAN></TD></TR>
+<TR style="HEIGHT: 120px">
+<TD>
+<DIV>
+<DIV style="WIDTH: 230px; FLOAT: left; VERTICAL-ALIGN: middle; PADDING-TOP: 5px"><SPAN id=auctionStepSign>Шаг аукциона</SPAN> <INPUT style="BORDER-BOTTOM: ; BORDER-LEFT: ; WIDTH: 70px; FONT: 12px Arial; COLOR: red; BORDER-TOP: ; BORDER-RIGHT: " id=curStepValue onchange=s.setValue(parseFloat(this.value)*100) value=50500.05 readOnly></DIV>
+<DIV style="FLOAT: left" id=slider-1 class="horizontal dynamic-slider-control slider" tabIndex=1 unselectable="on"><INPUT id=slider-input-1 class=slider-input value=5050005> 
+<DIV style="WIDTH: 167px; TOP: 11px; LEFT: 15px" class=line unselectable="on">
+<DIV style="WIDTH: 165px"></DIV></DIV>
+<DIV style="TOP: 6px; LEFT: 169px" class=handle unselectable="on">
+<DIV>&nbsp;</DIV></DIV></DIV></DIV>
+<DIV class=clear></DIV><BR>
+<DIV style="HEIGHT: 44px">
+<DIV style="WIDTH: 230px; FLOAT: left; VERTICAL-ALIGN: middle"><SPAN content="leaf:requestKind">Предложить новую цену контракта с учетом шага аукциона</SPAN><INPUT id=newPrice value=724249.90 type=hidden content="leaf:newPrice"> </DIV>
+<DIV style="FLOAT: left" id=MyNewPriceContainer>
+<DIV content="node:MyNewPriceContainer"><INPUT id=myNewPrice class="required number" onchange=javascript:checkSum(this) value=1000000 content="leaf:myNewPrice" jQuery1474871264684="15"> <INPUT id=reqID value=49531504 type=hidden content="leaf:reqID"> <INPUT id=requestNo value=11 type=hidden content="leaf:requestNo"> <INPUT id=priceSign value=1.00 type=hidden content="leaf:priceSign"> <INPUT id=purchaseID value=4381020 type=hidden content="leaf:purchaseID"> <INPUT id=purchaseCode value=0113200001416000384 type=hidden content="leaf:purchaseCode"> <INPUT id=purchaseName value="Выполнение работ по капитальному ремонту крыши и&#13;&#10;замене оконных блоков здания МБОУ «Кожильская средняя общеобразовательная школа»&#13;&#10;в д.Кожило Балезинского района Удмуртской Республики" type=hidden content="leaf:purchaseName"> <INPUT id=supplierName value='Общество с Ограниченной Ответственностью "Производственная Компания "Сфера"' type=hidden content="leaf:supplierName"> </DIV><BR></DIV>
+<DIV style="FLOAT: inherit"></DIV></DIV>
+<DIV style="WIDTH: 100%; MARGIN-BOTTOM: 5px; FLOAT: left; VERTICAL-ALIGN: middle"><SPAN>Активный робот</SPAN>&nbsp; <INPUT id=ActiveRobot disabled type=checkbox content="leaf:robot"> <BR><SPAN>(Для отключения робота нужно подать ценовое предложение. Внимание! Если ценовое предложение будет некорректным, то аукционный робот будет отключен, если корректным – будет принята ставка, затем отключен аукционный робот)</SPAN> </DIV><BR>
+<DIV class=clear></DIV>
+<DIV style="BORDER-BOTTOM: 1px solid; TEXT-ALIGN: center; BORDER-LEFT: 1px solid; BORDER-TOP: 1px solid; BORDER-RIGHT: 1px solid" id=closMessage class=red>Разрешается снизить ценовое предложение в интервале&nbsp; от&nbsp;<SPAN id=phWorkZone_purchPriceStepMin content="leaf:purchPriceStepMin">5050.01</SPAN>&nbsp; до&nbsp;<SPAN id=phWorkZone_purchPriceStepMax content="leaf:purchPriceStepMax">50500.05</SPAN> <BR>(в диапазоне цены контракта от&nbsp;<SPAN id=purchPriceMinVal content="leaf:purchPriceMinVal">769699.94</SPAN>&nbsp;и&nbsp; до&nbsp;<SPAN id=purchPriceMaxVal content="leaf:purchPriceMaxVal">724249.9</SPAN>), <BR>а также подать ценовое предложение вне шага (п.п. 8,9 ст.68 Федерального закона от 05.04.2013 г. № 44-ФЗ) 
+<DIV style="DISPLAY: none" id=cntMinusInfo>* - При внесении ставки за право исполнения контракта цена указывается с минусом </DIV></DIV></TD></TR></TBODY></TABLE></DIV></DIV></DIV><INPUT id=bestPriceSign value=1.00 type=hidden content="leaf:bestPriceSign"> <INPUT id=myPriceSign value=1.00 type=hidden content="leaf:myPriceSign"> <INPUT id=purchState value=active type=hidden content="leaf:purchState"> <INPUT id=htime class=textspanView value="26.09.2016 09:44:50" type=hidden content="leaf:strJavascriptAuctionEndDate"> 
+<TABLE class=dt content="node:offers">
+<TBODY>
+<TR>
+<TD class=th colSpan=6>Все предложения </TD></TR>
+<TR>
+<TD style="TEXT-ALIGN: center; WIDTH: 50px">Моя цена </TD>
+<TD>Место </TD>
+<TD>Предложенная цена </TD>
+<TD>Тип цены </TD>
+<TD>Время подачи предложения </TD></TR>
+<TR id=trOffer content="node:purchOffer">
+<TD style="TEXT-ALIGN: center; FONT-SIZE: large"><SPAN id=MyOfferMark content="leaf:MyOfferMark"></SPAN>&nbsp; </TD>
+<TD><SPAN id=offerPlace content="leaf:offerPlace">1</SPAN></TD>
+<TD><SPAN id=offerPrice content="leaf:offerPrice">774749.95</SPAN></TD>
+<TD><SPAN content="leaf:offerKind">контракт</SPAN></TD>
+<TD><SPAN id=offerTime content="leaf:offerTime">26.09.2016 09:34:50</SPAN></TD></TR>
+<TR id=trOffer881 content="node:purchOffer">
+<TD style="TEXT-ALIGN: center; FONT-SIZE: large" id=882><SPAN id=MyOfferMark883 content="leaf:MyOfferMark"></SPAN>&nbsp; </TD>
+<TD id=884><SPAN id=offerPlace885 content="leaf:offerPlace">2</SPAN></TD>
+<TD id=886><SPAN id=offerPrice887 content="leaf:offerPrice">779799.96</SPAN></TD>
+<TD id=888><SPAN id=889 content="leaf:offerKind">контракт</SPAN></TD>
+<TD id=890><SPAN id=offerTime891 content="leaf:offerTime">26.09.2016 09:32:24</SPAN></TD></TR>
+<TR id=trOffer892 content="node:purchOffer">
+<TD style="TEXT-ALIGN: center; FONT-SIZE: large" id=893><SPAN id=MyOfferMark894 content="leaf:MyOfferMark"></SPAN>&nbsp; </TD>
+<TD id=895><SPAN id=offerPlace896 content="leaf:offerPlace">3</SPAN></TD>
+<TD id=897><SPAN id=offerPrice898 content="leaf:offerPrice">789899.98</SPAN></TD>
+<TD id=899><SPAN id=900 content="leaf:offerKind">контракт</SPAN></TD>
+<TD id=901><SPAN id=offerTime902 content="leaf:offerTime">26.09.2016 09:30:19</SPAN></TD></TR>
+<TR id=trOffer903 content="node:purchOffer">
+<TD style="TEXT-ALIGN: center; FONT-SIZE: large" id=904><SPAN id=MyOfferMark905 content="leaf:MyOfferMark"></SPAN>&nbsp; </TD>
+<TD id=906><SPAN id=offerPlace907 content="leaf:offerPlace">4</SPAN></TD>
+<TD id=908><SPAN id=offerPrice909 content="leaf:offerPrice">794949.99</SPAN></TD>
+<TD id=910><SPAN id=911 content="leaf:offerKind">контракт</SPAN></TD>
+<TD id=912><SPAN id=offerTime913 content="leaf:offerTime">26.09.2016 09:27:12</SPAN></TD></TR>
+<TR id=trOffer914 content="node:purchOffer">
+<TD style="TEXT-ALIGN: center; FONT-SIZE: large" id=915><SPAN id=MyOfferMark916 content="leaf:MyOfferMark"></SPAN>&nbsp; </TD>
+<TD id=917><SPAN id=offerPlace918 content="leaf:offerPlace">5</SPAN></TD>
+<TD id=919><SPAN id=offerPrice920 content="leaf:offerPrice">800000.00</SPAN></TD>
+<TD id=921><SPAN id=922 content="leaf:offerKind">контракт</SPAN></TD>
+<TD id=923><SPAN id=offerTime924 content="leaf:offerTime">26.09.2016 09:26:26</SPAN></TD></TR>
+<TR id=trOffer925 content="node:purchOffer">
+<TD style="TEXT-ALIGN: center; FONT-SIZE: large" id=926><SPAN id=MyOfferMark927 content="leaf:MyOfferMark"></SPAN>&nbsp; </TD>
+<TD id=928><SPAN id=offerPlace929 content="leaf:offerPlace">6</SPAN></TD>
+<TD id=930><SPAN id=offerPrice931 content="leaf:offerPrice">824249.90</SPAN></TD>
+<TD id=932><SPAN id=933 content="leaf:offerKind">контракт</SPAN></TD>
+<TD id=934><SPAN id=offerTime935 content="leaf:offerTime">26.09.2016 09:24:36</SPAN></TD></TR>
+<TR id=trOffer936 content="node:purchOffer">
+<TD style="TEXT-ALIGN: center; FONT-SIZE: large" id=937><SPAN id=MyOfferMark938 content="leaf:MyOfferMark"></SPAN>&nbsp; </TD>
+<TD id=939><SPAN id=offerPlace940 content="leaf:offerPlace">7</SPAN></TD>
+<TD id=941><SPAN id=offerPrice942 content="leaf:offerPrice">879799.96</SPAN></TD>
+<TD id=943><SPAN id=944 content="leaf:offerKind">контракт</SPAN></TD>
+<TD id=945><SPAN id=offerTime946 content="leaf:offerTime">26.09.2016 09:23:32</SPAN></TD></TR>
+<TR id=trOffer947 class=gridHighlight content="node:purchOffer">
+<TD style="TEXT-ALIGN: center; FONT-SIZE: large" id=948><SPAN id=MyOfferMark949 content="leaf:MyOfferMark">*</SPAN>&nbsp; </TD>
+<TD id=950><SPAN id=offerPlace951 content="leaf:offerPlace">8</SPAN></TD>
+<TD id=952><SPAN id=offerPrice953 content="leaf:offerPrice">969600.92</SPAN></TD>
+<TD id=954><SPAN id=955 content="leaf:offerKind">контракт</SPAN></TD>
+<TD id=956><SPAN id=offerTime957 content="leaf:offerTime">26.09.2016 09:17:42</SPAN></TD></TR>
+<TR id=trOffer958 content="node:purchOffer">
+<TD style="TEXT-ALIGN: center; FONT-SIZE: large" id=959><SPAN id=MyOfferMark960 content="leaf:MyOfferMark"></SPAN>&nbsp; </TD>
+<TD id=961><SPAN id=offerPlace962 content="leaf:offerPlace">9</SPAN></TD>
+<TD id=963><SPAN id=offerPrice964 content="leaf:offerPrice">1004950.99</SPAN></TD>
+<TD id=965><SPAN id=966 content="leaf:offerKind">контракт</SPAN></TD>
+<TD id=967><SPAN id=offerTime968 content="leaf:offerTime">26.09.2016 09:15:18</SPAN></TD></TR></TBODY></TABLE></DIV></DIV></TD></TR>
+<TR>
+<TD style="FONT-SIZE: 12pt"><SPAN style="COLOR: #00643f" id=phWorkZone_cntrlResultMsg_xmlData></SPAN>&nbsp; <SPAN style="COLOR: rgb(255,255,255); FONT-WEIGHT: bold" id=saveInfo>Страница обновлена!</SPAN> <SPAN id=lblTest></SPAN></TD></TR>
+<TR>
+<TD>
+<DIV id=phWorkZone_signPanel>
+<SCRIPT type=text/javascript>
+    //common functions       
+    function signPanelInit(signPanelId,  providerCode, SelectedCert) {
+        if (providerCode == null || providerCode == '')  providerCode='RU';
+        
+        var signPanel=$(document.getElementById(signPanelId));
+        signPanel.find('input[id $= "selectedProvider"]').val(providerCode);
+
+        var divProviderCode = signPanel.find('div[id $= "_providerCode"]');
+        
+        signPanel.find('.signPanel_certSelect').hide(); 
+        
+        divProviderCode.html(providerCode);
+        
+    
+        if(providerCode=='RU')  {
+            signPanel_Init_RU(signPanelId);
+        }
+      
+        
+        if($('#'+signPanelId).find('.signPanel_providerSelect_dropdown').length > 0 ) {
+
+            var provSelectContainer = $('#'+signPanelId).find('ul.signPanel_providerList');
+            provSelectContainer.empty();
+
+            if(providerCode=='RU') {
+                var kz_option = $('<li>KZ</li>');
+                kz_option.click(function(){ signPanelInit(signPanelId, 'KZ',SelectedCert);});  
+                provSelectContainer.append(kz_option);
+            }
+            if(providerCode=='KZ') {
+                var ru_option = $('<li>RU</li>');
+                ru_option.click(function(){ signPanelInit(signPanelId, 'RU', SelectedCert);});  
+                provSelectContainer.append(ru_option);
+            }
+        }
+    }
+    function signPanel_saveSign(signPanelId, DataId, SignId) {
+        
+        var signPanel=$(document.getElementById(signPanelId));
+        var divProviderCode = signPanel.find('div[id $= "_providerCode"]');
+        var providerCode = divProviderCode.text();
+
+    
+        if(providerCode=='RU')  {
+            signPanel_saveSign_RU(signPanelId, DataId, SignId);
+        }
+      
+    }
+
+    
+    //CryptoAPI 
+    function signPanel_Init_RU(signPanelId) {
+        
+        var signPanel=$(document.getElementById(signPanelId));
+
+        var divCertSelect = signPanel.find('[id $= "RU_certSelect"]');
+        divCertSelect.removeAttr('style');
+
+        var selectedCertHash = signPanel.find('input[name $="selectedCertHash"]').val();
+        var selectCertDropdown = signPanel.find('[id $= "certList"]');
+        var certListId = selectCertDropdown.attr('id');
+        
+        // заполнение списка сертификатов
+        
+            EnumAvaibleCert(certListId, "Кротов Константин Витальевич", '1209F51A4B89B6001C0A81EDAC62775E439973B0');
+        
+                        
+        // установить выбор на требуемый сертификат
+        if (selectedCertHash != "") {
+            selectCertDropdown.val(selectedCertHash);
+            //selectCertDropdown.attr('disabled', true);
+        }
+    }
+    function signPanel_saveSign_RU(signPanelId, DataId, SignId) {
+        
+        var signPanel=$(document.getElementById(signPanelId));
+        var selectCertDropdown = signPanel.find('[id $= "certList"]');
+        var certListId = selectCertDropdown.attr('id');
+
+        sign(DataId, certListId, SignId);
+
+        var selectedCertHash = selectCertDropdown.val();
+
+        signPanel.find('input[name $="selectedCertHash"]').val(selectedCertHash);
+    }
+    
+    // end  common functions
+   
+    //Инициализация текущего экземпляра 
+    $(document).ready(function() {
+        if(document.getElementById('phWorkZone_TradePlace_SignPanel_signPanel') != null) {
+            TradePlace_SignPanel_signPanel_Init();
+        }
+    });
+    
+    function TradePlace_SignPanel_signPanel_Init() {
+        
+            var signPanel = $(document.getElementById('phWorkZone_TradePlace_SignPanel_signPanel'));
+            signPanel.find('.signPanel_providerSelect_dropdown').remove();
+            
+        signPanelInit('phWorkZone_TradePlace_SignPanel_signPanel', 'RU','');
+    } 
+
+    function TradePlace_SignPanel_signPanel_saveSign() {
+        $('#phWorkZone_TradePlace_SignPanel_btnSign').attr('disabled','disabled');
+        try {
+        
+            if (typeof beforeSign == 'function') {
+                var result = beforeSign();
+                if(!result) {
+                    $('#phWorkZone_TradePlace_SignPanel_btnSign').removeAttr('disabled');
+                    return false;
+                }
+            }
+            else {
+                $('#phWorkZone_TradePlace_SignPanel_btnSign').removeAttr('disabled');
+                return false;
+            }
+
+        
+        
+        $('#phWorkZone_signValue').val("");
+
+        signPanel_saveSign('phWorkZone_TradePlace_SignPanel_signPanel','phWorkZone_xmlData', 'phWorkZone_signValue');
+
+        
+            if (typeof afterSign == 'function') {
+                var result = afterSign();
+                if(!result) {
+                    $('#phWorkZone_TradePlace_SignPanel_btnSign').removeAttr('disabled');
+                    return false;
+                }
+            }
+            else {
+                $('#phWorkZone_TradePlace_SignPanel_btnSign').removeAttr('disabled');
+                return false;
+            }
+        
+            $('#phWorkZone_TradePlace_SignPanel_btnSign').removeAttr('disabled');
+            return true;
+        }
+        catch (e) {
+            $('#phWorkZone_TradePlace_SignPanel_btnSign').removeAttr('disabled');
+            return false;
+        }
+    } 
+</SCRIPT>
+
+<STYLE type=text/css>.signPanel {
+	BORDER-BOTTOM: #bebebe 1px solid; POSITION: relative; BORDER-LEFT: #bebebe 1px solid; PADDING-BOTTOM: 3px; BACKGROUND-COLOR: #fafafa; MARGIN: 10px 0px; MIN-HEIGHT: 42px; PADDING-LEFT: 3px; WIDTH: auto; PADDING-RIGHT: 3px; DISPLAY: block; BORDER-TOP: #bebebe 1px solid; TOP: 0px; BORDER-RIGHT: #bebebe 1px solid; PADDING-TOP: 3px; LEFT: 0px
+}
+.signPanel * {
+	LINE-HEIGHT: 1
+}
+.signPanel_certSelect {
+	POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: inline-block; FLOAT: left; TOP: 0px; PADDING-TOP: 12px; LEFT: 0px
+}
+.signPanel_signButton {
+	POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; DISPLAY: inline-block; FLOAT: left; TOP: 0px; PADDING-TOP: 12px; LEFT: 0px
+}
+.signPanel_certSelect DIV {
+	POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px 10px 0px 0px; PADDING-LEFT: 0px; WIDTH: auto; PADDING-RIGHT: 0px; DISPLAY: inline-block; FLOAT: left; HEIGHT: 34px; TOP: 0px; PADDING-TOP: 0px; LEFT: 0px
+}
+.signPanel_signButton DIV {
+	POSITION: relative; PADDING-BOTTOM: 0px; MARGIN: 0px 10px 0px 0px; PADDING-LEFT: 0px; WIDTH: auto; PADDING-RIGHT: 0px; DISPLAY: inline-block; FLOAT: left; HEIGHT: 34px; TOP: 0px; PADDING-TOP: 0px; LEFT: 0px
+}
+.signPanel_providerCode {
+	POSITION: absolute; MARGIN: 0px 10px 4px 0px; WIDTH: 50px; BOTTOM: 0px; HEIGHT: 34px; RIGHT: 0px
+}
+.signPanel_currentProvider {
+	COLOR: #eeeeee; FONT-SIZE: 34px
+}
+.signPanel_providerSelect_dropdown {
+	POSITION: relative; HEIGHT: 34px; COLOR: #aaaaaa; FONT-SIZE: 10px; TOP: -32px; LEFT: 48px
+}
+.signPanel_providerList {
+	BORDER-BOTTOM: grey 1px solid; POSITION: absolute; BORDER-LEFT: grey 1px solid; PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; DISPLAY: none; BACKGROUND: white; FONT-SIZE: 16px; BORDER-TOP: grey 1px solid; TOP: 15px; BORDER-RIGHT: grey 1px solid; PADDING-TOP: 4px; LEFT: 0px
+}
+.signPanel_providerSelect_dropdown:hover .signPanel_providerList {
+	DISPLAY: block
+}
+.signPanel_providerList LI {
+	LIST-STYLE-TYPE: none; CURSOR: pointer; FONT-WEIGHT: bold
+}
+.signPanel_providerList LI:hover {
+	COLOR: red
+}
+.signPalel_controlLabel {
+	POSITION: absolute; FONT-SIZE: 10px; TOP: -10px
+}
+.signPanel_infoMessage {
+	POSITION: absolute; MARGIN: 10px; HEIGHT: auto; COLOR: red; TOP: 54px; FONT-WEIGHT: bold; LEFT: 0px
+}
+</STYLE>
+
+<DIV id=phWorkZone_TradePlace_SignPanel_signPanel class=signPanel><INPUT id=phWorkZone_TradePlace_SignPanel_selectedCertHash type=hidden name=ctl00$phWorkZone$TradePlace_SignPanel$selectedCertHash> <INPUT id=phWorkZone_TradePlace_SignPanel_selectedProvider value=RU type=hidden name=ctl00$phWorkZone$TradePlace_SignPanel$selectedProvider> 
+<DIV class=signPanel_infoMessage><SPAN id=phWorkZone_TradePlace_SignPanel_infoMessage></SPAN></DIV>
+<DIV id=TradePlace_SignPanel_signPanel_RU_certSelect class=signPanel_certSelect jQuery1474871264684="6">
+<DIV><SPAN class=signPalel_controlLabel>Сертификат:</SPAN> <SELECT style="WIDTH: 410px" id=phWorkZone_TradePlace_SignPanel_certList name=ctl00$phWorkZone$TradePlace_SignPanel$certList><OPTION selected value=1209F51A4B89B6001C0A81EDAC62775E439973B0>Кротов Константин Витальевич (до:Wed May 31 15:01:00 UTC+0300 2017)</OPTION></SELECT> </DIV></DIV>
+<DIV class=signPanel_signButton>
+<DIV><INPUT id=btnSign2 class=btnElastic onclick="return TradePlace_SignPanel_signPanel_saveSign();" value="Подписать и сохранить" type=button> </DIV></DIV>
+<DIV class=signPanel_providerCode>
+<DIV id=TradePlace_SignPanel_signPanel_providerCode class=signPanel_currentProvider>RU</DIV></DIV></DIV><INPUT id=btnRefresh class=btnElastic onclick=javascript:AsyncRefresh();SetDefaultVal(); value="Обновить страницу (автоматическое обновление через: 52)" type=button> <SPAN>Время обновления страницы</SPAN>&nbsp; <INPUT style="WIDTH: 2em" id=userRefreshInterval onkeypress="return checkIfNum();" onpaste="return false;" value=59 maxLength=2 type=text>&nbsp;сек. <INPUT class=btnElastic onclick=javascript:SetUserRefreshInterval(); value=Установить type=button> </DIV>
+<DIV><SPAN style="COLOR: red; FONT-SIZE: 14pt" id=phWorkZone_cntrlErrorMsg_xmlData></SPAN>&nbsp;</DIV></TD></TR></TBODY></TABLE></DIV>
+<SCRIPT type=text/javascript src="/js/async.js"></SCRIPT>
+
+<SCRIPT type=text/javascript>
+        var s;
+        var firstServerRequest = true;
+
+        function parseData() {
+            $("#BestPrice2").html(document.getElementById("BestPrice").innerText);
+            var bestPrice = parseFloat(document.getElementById("BestPrice").innerText.split(' ').join('')) * 100;
+            var purchAmount = parseFloat(document.getElementById("purchAmount").innerText.split(' ').join(''));
+            var isIncrease = $('#isIncrease').val();
+            var discount = 0;
+            if (isIncrease == 'true') {
+                discount = bestPrice;
+            } else {
+                discount = bestPrice / purchAmount;
+            }
+            var spnDiscount = 100 - discount;
+            var sign = parseFloat(document.getElementById("priceSign").value);
+            var bsign = parseFloat(document.getElementById("bestPriceSign").value);
+            var msign = parseFloat(document.getElementById("myPriceSign").value);
+            if (bsign < 0) {
+                spnDiscount = 100;
+            }
+            $("#colorPercent").width((100 - spnDiscount) + "%");
+            $("#spnDiscount").html(roundNumber(spnDiscount, 2));
+            //if (bestPrice == 0)
+            //    document.getElementById("BestPrice").innerText = document.getElementById("purchAmount").innerText
+
+            $("[id^=MyOfferMark]").each(function () {
+                if (this.innerText != '') {
+                    $("#myPlace").html($(this).closest('tr').find("[id^=offerPlace]").html());
+                    $(this).parent().parent().addClass('gridHighlight');
+                }
+            })
+
+            $("#bestTime").html($("#offerTime").html());
+            //$("#bestNumber").html($("#reqNo").html());
+
+            if (s == null) {
+                s = new Slider(document.getElementById("slider-1"), document.getElementById("slider-input-1"));
+            }
+            var minVal;
+            var maxVal;
+
+            if (document.getElementById("purchState").value != 'closing') {
+                minVal = parseFloat(document.getElementById("phWorkZone_purchPriceStepMin").innerText.split(' ').join('')) * 100;
+                maxVal = parseFloat(document.getElementById("phWorkZone_purchPriceStepMax").innerText.split(' ').join('')) * 100;
+                minVal = isNaN(minVal) ? 0 : minVal;
+                maxVal = isNaN(maxVal) ? 0 : maxVal;
+                document.getElementById('auctionStepSign').innerHTML = "Шаг аукциона";
+                $('#purchPriceMinVal').text(GetStepValue(minVal, maxVal));
+                $('#purchPriceMaxVal').text(GetStepValue(maxVal, minVal));
+                if (firstServerRequest) {
+                    $('#myNewPrice').val($('#newPrice').val());
+                }
+            }
+            else {
+                document.getElementById('auctionStepSign').innerHTML = "Диапазон улучшения своей цены";
+
+                minVal = 0;
+                var myPriceEl = document.getElementById("myPrice");
+                if (myPriceEl != null) {
+                    if (parseFloat(myPriceEl.innerText.split(' ').join('')) != 0) {
+                        if (msign > 0) {
+                            maxVal = Math.abs(parseFloat(document.getElementById("BestPrice").innerText) - parseFloat(myPriceEl.innerText) + 0.01) * 100;
+                            if (firstServerRequest) {
+                                $('#myNewPrice').val(parseFloat(myPriceEl.innerText) - msign * 0.01);
+                            }
+                        } else {
+                            if (parseFloat(document.getElementById("BestPrice").innerText) > parseFloat(myPriceEl.innerText)) {
+                                maxVal = Math.abs(parseFloat(document.getElementById("BestPrice").innerText) - parseFloat(myPriceEl.innerText) - 0.01) * 100;
+                                if (firstServerRequest) {
+                                    $('#myNewPrice').val(parseFloat(myPriceEl.innerText) + 0.01);
+                                }
+                            } else {
+                                maxVal = Math.abs(parseFloat(document.getElementById("BestPrice").innerText) - 0.01) * 100;
+                                if (firstServerRequest) {
+                                    $('#myNewPrice').val('0.01');
+                                }
+                            }
+                        }
+                        //maxVal = Math.abs((bsign*parseFloat(document.getElementById("BestPrice").innerText.split(' ').join('')) * 100 - msign*(myPriceEl.innerText.split(' ').join('')) * 100));
+                    }
+                    else {
+                        maxVal = Math.abs((bsign * parseFloat(document.getElementById("BestPrice").innerText.split(' ').join('')) * 100 - parseFloat(document.getElementById("purchAmount").innerText.split(' ').join('')) * 100));
+                    }
+                }
+
+            }
+
+            s.setMinimum(minVal);
+            s.setMaximum(maxVal);
+
+            s.onchange = function () {
+                document.getElementById("curStepValue").value = (s.getValue() / 100).toFixed(2);
+                if (isNaN(parseFloat(document.getElementById("BestPrice").innerText.split(' ').join('')))) {
+                    document.getElementById("newPrice").value = 0;
+                    $('#myNewPrice').val(0);
+                }
+                else {
+                    var np;
+                    if (document.getElementById("purchState").value != 'closing') {
+                        np = (bsign * parseFloat(document.getElementById("BestPrice").innerText.split(' ').join('')) * 100 - parseFloat(s.getValue())) / 100;
+                    }
+                    else {
+                        np = (bsign * parseFloat(document.getElementById("BestPrice").innerText.split(' ').join('')) * 100 + parseFloat(s.getValue())) / 100;
+                    }
+                    if (np == 0) {
+                        if (parseFloat($('#purchPriceMinVal').html()) > 0) np = 0.01;
+                        if (parseFloat($('#purchPriceMinVal').html()) < 0) np = -0.01;
+                    }
+                    if (np < 0)
+                        document.getElementById("priceSign").value = "-1";
+
+                    // выставить тип ценового предложения (цена/плата за право)
+                    if (np > 0) {
+                        $('[content="leaf:requestKind"]').text('Предложить новую цену контракта с учетом шага аукциона');
+                    }
+                    else {
+                        $('[content="leaf:requestKind"]').text('Предложить плату за право исполнения контракта');
+                    }
+                    //--
+
+                    //np = Math.abs(np); // выводим со знаком "-"
+                    document.getElementById("newPrice").value = np;
+                    $('#myNewPrice').val(roundNumber(np, 2));
+                }
+            };
+
+            if (firstServerRequest) {
+                s.setValue(maxVal);
+            }
+
+            if (GetStepValue(maxVal, minVal) < 0)
+                $('#cntMinusInfo').show();
+        }
+
+        function GetStepValue(step, otherstep) {
+            if (isNaN(parseFloat(document.getElementById("BestPrice").innerText.split(' ').join('')))) {
+                return 0;
+            }
+            else {
+                var np;
+                if (document.getElementById("purchState").value != 'closing') {
+                    np = (parseFloat(document.getElementById("bestPriceSign").value) * parseFloat(document.getElementById("BestPrice").innerText.split(' ').join('')) * 100 - parseFloat(step)) / 100;
+                }
+                else {
+                    np = (parseFloat(document.getElementById("bestPriceSign").value) * parseFloat(document.getElementById("BestPrice").innerText.split(' ').join('')) * 100 + parseFloat(step)) / 100;
+                }
+                if (np == 0) {
+                    if (otherstep > 0) np = 0.01;
+                    if (otherstep < 0) np = -0.01;
+                }
+                return np; //Math.abs(np);
+            }
+        }
+
+        function timeDifference(laterdate, earlierdate) {
+            if (laterdate == null || earlierdate == null || (laterdate.getTime() < earlierdate.getTime()))
+                return;
+            var difference = laterdate.getTime() - earlierdate.getTime();
+            var daysDifference = Math.floor(difference / 1000 / 60 / 60 / 24);
+            difference -= daysDifference * 1000 * 60 * 60 * 24
+            var hoursDifference = Math.floor(difference / 1000 / 60 / 60);
+            difference -= hoursDifference * 1000 * 60 * 60
+            var minutesDifference = Math.floor(difference / 1000 / 60);
+            difference -= minutesDifference * 1000 * 60
+            var secondsDifference = Math.floor(difference / 1000);
+
+            var lastHour = hoursDifference > 9 ? (hoursDifference.toString().substring(1)) : (hoursDifference);
+            var hourText = "часов";
+            if (lastHour < 5 && lastHour > 1)
+                hourText = "часа";
+            if (lastHour == 1)
+                hourText = "час";
+            if (hoursDifference > 10 && hoursDifference < 20)
+                hourText = "часов";
+            if (hoursDifference > 0) {
+                hourText = hoursDifference + " " + hourText + " ";
+            }
+            else {
+                hourText = "";
+            }
+
+            var lastMinut = minutesDifference > 9 ? (minutesDifference.toString().substring(1)) : (minutesDifference);
+            var minutText = "минут";
+            if (lastMinut < 5 && lastMinut > 1)
+                minutText = "минуты";
+            if (lastMinut == 1)
+                minutText = "минута";
+            if (minutesDifference > 10 && minutesDifference < 20)
+                minutText = "минут";
+            minutText = ((minutesDifference > 9) ? (minutesDifference) : ("0" + minutesDifference)) + " " + minutText + " ";
+
+            var lastSecond = secondsDifference > 9 ? (secondsDifference.toString().substring(1)) : (secondsDifference);
+            var secondText = "секунд";
+            if (lastSecond < 5 && lastSecond > 1)
+                secondText = "секунды";
+            if (lastSecond == 1)
+                secondText = "секунда";
+            if (secondsDifference > 10 && secondsDifference < 20)
+                secondText = "секунд";
+            secondText = ((secondsDifference > 9) ? (secondsDifference) : ("0" + secondsDifference)) + " " + secondText + " ";
+            return hourText + minutText + " " + secondText;
+        }
+
+        function checkSum(obj) {
+            $('#myNewPrice').val($('#myNewPrice').val().replace(/\s/g,'').replace(/,/,'.'));
+            $('#myNewPrice').validate();
+        }
+    </SCRIPT>
+
+<SCRIPT type=text/javascript>
+
+        
+        var urlReqId = '49531504';
+        var urlASID = 'AS14';
+
+        if (location.search) {
+            var urlParam = {};
+            var pair = (location.search.substr(1)).split('&');
+
+            for (var i = 0; i < pair.length; i++) {
+                var param = pair[i].split('=');
+                urlParam[param[0].toLowerCase()] = param[1];
+            }
+
+            if (urlParam["reqid"]) urlReqId = urlParam["reqid"];
+            if (urlParam["asid"]) urlASID = urlParam["asid"];
+        }
+
+        $(function () {
+            $('#myOffersLink').attr('href', '/tradezone/Documents/OutboxOffers.aspx?id=' + urlReqId + '&ASID=' + urlASID);
+        });
+
+        var f = document.getElementById("phWorkZone_xmlData");
+        var c = document.getElementById("XMLContainer");
+        LoadXML(f, c);
+        var blockSignedData = false;
+        
+        if ($('#isTradePanelVisible').val() == 'on') {
+            $('#tradePanelVisible').show();
+        }
+
+        function beforeSign() {
+            /* проверить и собрать документ предложения о цене*/
+            
+            if (!$('form').valid()) 
+                return false;
+			
+            blockSignedData = true;
+            SavePrice(); 
+            
+            document.getElementById("phWorkZone_xmlData").value = document.getElementById("phWorkZone_xmlData").value.replace(/<br>/gi, "\n");
+
+            /* Заменяем одинарные кавычки на двойные для корректной отправки ценового предложения средствами ajax. */
+            document.getElementById("phWorkZone_xmlData").value = document.getElementById("phWorkZone_xmlData").value.split("'").join('"');
+            /* Заменяем обратный слеш на слеш для корректной отправки ценового предложения средствами ajax. */
+            document.getElementById("phWorkZone_xmlData").value = document.getElementById("phWorkZone_xmlData").value.split("\\").join("/");
+            return true;
+        }
+        function afterSign() {
+            AsyncPostBack();
+            SetDefaultVal();
+            return true;
+        }
+        
+        function SavePrice() {
+            genXML(document.getElementById("MyNewPriceContainer"), document.getElementById("phWorkZone_xmlData"));
+        }
+
+        function AsyncPostBack() {
+            //блокируем кнопку и накрываем форму прозрачной панелью
+            BlockPageControl(true);
+
+            var request = 
+                    '{'
+                    +'reqID : '  + urlReqId 
+                    +', '
+                    +'xmlData : '+'\'' + $('#phWorkZone_xmlData').val()   + '\''
+                    +', '
+                    +'Hash : '   +'\'' + $('#phWorkZone_signValue').val() + '\''
+                    +'}';
+
+            $.ajax({ 
+				type: "POST", 
+				url: '/tradezone/Supplier/TradePlace.aspx/AsyncPostBack?reqid='+urlReqId+'&ASID='+urlASID, 
+				data: request,
+                contentType: "application/json; charset=utf-8", 
+				dataType: "json",
+                success: OnSucceeded,
+                error: OnPostBackError
+            });
+        }
+        
+        function AsyncRefresh() {
+            if(!blockSignedData) {
+                //блокируем кнопку и накрываем форму прозрачной панелью
+                BlockPageControl(true);
+
+                var curDate = new Date();
+                var request = '{reqID : '+urlReqId+', lTime : ' + curDate.getTime() + '}';
+
+                $.ajax({ 
+					type: "POST", 
+					url: '/tradezone/Supplier/TradePlace.aspx/AsyncRefresh?reqid='+urlReqId+'&ASID='+urlASID, 
+					data: request,
+                    contentType: "application/json; charset=utf-8", 
+					dataType: "json",
+                    success: OnSucceeded,
+                    error: OnRefreshError
+                });
+            }
+        }
+        
+        function OnRefreshError(x,e) {
+            var xmlErr = document.getElementById("phWorkZone_cntrlErrorMsg_xmlData");
+            if (x.status == 12029)
+                {
+                xmlErr.innerHTML = '<Errors><Error>'
+                    + '<ErrorMessage>Произошла ошибка при отправке запроса на сервер. </ErrorMessage>' 
+                    + '<diagnosticinfo><status>&nbsp;</status><statusText><br/>Описание: Потеряно соединение с сервером:<br/>1)Проверьте подключение к интернету;<br/>2)Перезагрузите браузер, обновите страницу (Ctrl + F5).</statusText></diagnosticinfo>'
+                    + '</Error></Errors>';
+                }
+            else if (x.status==200 && x.readyState==4)
+            {
+             xmlErr.innerHTML = '<Errors><Error>' 
+             + '<ErrorMessage>Произошла ошибка при отправке запроса на сервер. </ErrorMessage>'
+             + '<diagnosticinfo><statusText>Ответ сервера: ' + x.responseText + '.</statusText></diagnosticinfo></Error></Errors>' ;
+         }
+            else
+                {
+                xmlErr.innerHTML = '<Errors><Error>'
+                    + '<ErrorMessage>Произошла ошибка при отправке запроса на сервер. </ErrorMessage>' 
+                    + '<diagnosticinfo><status>Статус: ' + x.status + '. </status><statusText>Описание: ' + x.statusText + '.</statusText></diagnosticinfo>'
+                    + '</Error></Errors>';
+                }        
+        }
+        
+        function OnPostBackError(x,e) {
+            blockSignedData = false;
+            var xmlErr = document.getElementById("phWorkZone_cntrlErrorMsg_xmlData");
+            if (x.status == 12029)
+                {
+                xmlErr.innerHTML = '<Errors><Error>'
+                    + '<ErrorMessage>Произошла ошибка при отправке запроса на сервер. </ErrorMessage>' 
+                    + '<diagnosticinfo><status>&nbsp;</status><statusText><br/>Описание: Потеряно соединение с сервером:<br/>1)Проверьте подключение к интернету;<br/>2)Перезагрузите браузер, обновите страницу (Ctrl + F5).</statusText></diagnosticinfo>'
+                    + '</Error></Errors>';
+                }
+            else if (x.status==200 && x.readyState==4)
+            {
+             xmlErr.innerHTML = '<Errors><Error>' 
+             + '<ErrorMessage>Произошла ошибка при отправке запроса на сервер. </ErrorMessage>'
+             + '<diagnosticinfo><statusText>Ответ сервера: ' + x.responseText + '.</statusText></diagnosticinfo></Error></Errors>' ;
+         }
+            else
+                {
+                xmlErr.innerHTML = '<Errors><Error>'
+                    + '<ErrorMessage>Произошла ошибка при отправке запроса на сервер. </ErrorMessage>' 
+                    + '<diagnosticinfo><status>Статус: ' + x.status + '. </status><statusText>Описание: ' + x.statusText + '.</statusText></diagnosticinfo>'
+                    + '</Error></Errors>';
+                }        
+        }
+        
+        function OnSucceeded(result) {
+            //блокируем кнопку и накрываем форму прозрачной панелью
+            BlockPageControl(false);
+
+            if (!blockAnim) {
+                blockAnim = true;
+                $('#saveInfo').show();
+                animateColor(document.getElementById('saveInfo'), '#000000', '#ffffff', 4000, 20);
+            }
+            var xmlData = document.getElementById("phWorkZone_xmlData");
+            xmlData.value = result.d.xmlData;
+
+            var xmlErr = document.getElementById("phWorkZone_cntrlErrorMsg_xmlData");
+            xmlErr.innerHTML = result.d.xmlError;
+
+            var xmlResult = document.getElementById("phWorkZone_cntrlResultMsg_xmlData");
+            xmlResult.innerHTML = result.d.xmlResult;
+
+            /*если завершились торги*/
+            if (result.d.HideTradePlace) {
+                $('#phWorkZone_successfulForm').hide();
+                $('#phWorkZone_signPanel').hide();
+                $('#phWorkZone_errorForm').show();
+                $('#saveInfo').hide();
+                clearTimeout(refreshButtonTimer);
+            }
+
+            $('tr[content="node:purchOffer"]:not(tr[content="node:purchOffer"]:first)').remove();
+            $('tr[content="node:purchOffer"]').removeClass('gridHighlight');
+
+            LoadXML(f, c);
+            if(!result.d.HideTradePlace) {
+                $('#phWorkZone_successfulForm').show();  
+                $('#phWorkZone_signPanel').show();
+                $('#phWorkZone_errorForm').hide();
+                OnSucceededTimeRefresh(result);
+                parseData();
+            }
+            if ($('#isTradePanelVisible').val() == 'on') {
+                $('#tradePanelVisible').show();
+            } else {
+                $('#tradePanelVisible').hide();
+            }
+            firstServerRequest = false;
+            blockSignedData = false;
+        }
+
+        function OnSucceededTimeRefresh(result) {
+            $("#currentTime").html(result.d.curentTime);
+            $("#ShortTime").text(result.d.shortTime);
+            var dt1, dt2, difference;
+            dt1 = ConvertStringToDateTime($("#htime").val());
+            dt2 = new Date($("#currentTime").html());
+            difference = dt1 - dt2;
+            if (difference > 600000)
+               $("#spnTomeDiff").html("10 минут 00 секунд")
+            else 
+               $("#spnTomeDiff").html(timeDifference(dt1, dt2));
+           
+            if (document.getElementById("purchState").value == 'closing') {
+                var endAuction = ConvertStringToDateTime($("#htime").val());
+                endAuction.setTime(endAuction.getTime() + (10 * 60 * 1000))
+                $("#spnTomeDiff").html(timeDifference(endAuction, new Date($("#currentTime").html())));
+                
+                $("#closMessage").html("Разрешается подавать предложения о цене контракта в соответствии с<br/>п.12 ст.68 Федерального закона от 05.04.2013 г. № 44-ФЗ");
+                if(parseFloat(document.getElementById("bestPriceSign").value)<0)
+                    $("#closMessage").html($("#closMessage").html() + "<br/>* - При внесении ставки за право исполнения контракта цена указывается с минусом");
+
+                $("#titleEndAuction").html("Этап закрытия торгов.<br/>До окончания подачи ценовых предложений осталось:");
+            }
+            $("#longTime").html(timeDifference(new Date($("#currentTime").html()), ConvertStringToDateTime($("#hdnBeginDate").val())))
+        }        
+
+        function BlockPageControl(isBlocked) {
+            if(isBlocked) {
+                $('#btnSave').attr('disabled',true);
+                $('#btnRefresh').attr('disabled',true);
+            } else {
+                $('#btnSave').attr('disabled',false);
+                $('#btnRefresh').attr('disabled',false);
+            }
+        }
+
+        /* Refresh functions */
+        var refreshButtonTimer, remainingSec;
+        var remainingSecMin,remainingSecMax,remainingSecCurrent;
+        remainingSecMin = 10;
+        remainingSecMax = 60;
+        remainingSecCurrent = 60 - 1;
+        document.getElementById("userRefreshInterval").value=remainingSecCurrent;
+        
+        function RefreshAsyncRefreshButton() {
+            if($("#btnRefresh") != null) {
+                $("#btnRefresh").val('Обновить страницу (автоматическое обновление через: ' + remainingSec.toString() + ')');
+            }
+            else {
+                clearTimeout(refreshButtonTimer);
+            }
+            if(remainingSec == 0) {
+                AsyncRefresh();
+                SetDefaultVal();
+                return;
+            }
+            remainingSec = remainingSec - 1;
+        }
+        
+        function SetDefaultVal() {
+            remainingSec = remainingSecCurrent;
+        }
+        
+        function SetUserRefreshInterval()
+        {
+            var ri=parseInt(document.getElementById("userRefreshInterval").value);
+            if (!isNaN(ri))
+            {
+                if (ri>remainingSecMax)
+                {
+                    alert("Максимально возможное время обновления "+remainingSecMax+" секунд");
+                }
+                else if (ri<remainingSecMin)
+                {
+					alert("Минимально возможное время обновления "+remainingSecMin+" секунд");                 
+                }
+                else
+                {
+                    remainingSecCurrent=ri;
+                    remainingSec=ri;
+                    AsyncRefresh();
+                }
+            }
+        }
+
+        AsyncRefresh();
+        SetDefaultVal();
+        refreshButtonTimer = self.setInterval("RefreshAsyncRefreshButton();", 1000);
+        /* END - Refresh functions */
+    </SCRIPT>
+</DIV></DIV>
+<DIV id=footer-back>
+<DIV id=footer>Телефоны: (495) 787-29-97, (495) 787-29-99<BR>Адрес: 101000, г. Москва, Милютинский пер., дом 10, стр. 4<BR><BR>© ЗАО «Сбербанк - АСТ»<BR>(Закрытое акционерное общество «Сбербанк - Автоматизированная система торгов») </DIV></DIV></DIV></DIV></FORM>
+<SCRIPT type=text/javascript>
+        $(function () {
+            $("#DictDialog").dialog({ autoOpen: false, width: 640, modal: true, closeOnEscape: true, title: " " });
+
+            var nForms = document.getElementsByTagName('form');
+            for (var n = 0; n < nForms.length; n++) {
+                var nFields = document.forms[n].getElementsByTagName('input');
+                for (var i = 0; i < nFields.length; i++) {
+                    if (nFields[i].className.toUpperCase().indexOf("READONLY") > -1) nFields[i].readOnly = true;
+                }
+            }
+        });
+    </SCRIPT>
+
+<DIV id=responseLeft>
+<STYLE type=text/css>#response_slider_wrap {
+	POSITION: relative; WIDTH: 30px; DISPLAY: inline-block; FLOAT: left; HEIGHT: 340px; OVERFLOW: hidden; CURSOR: pointer
+}
+#response_slider_wrap .h {
+	WIDTH: 30px; DISPLAY: inline; BACKGROUND-POSITION: 50% bottom; FLOAT: right; HEIGHT: 170px; CURSOR: pointer
+}
+#response_slider_wrap .v {
+	WIDTH: 30px; DISPLAY: block; BACKGROUND-POSITION: 50% bottom; FLOAT: right; HEIGHT: 170px; CURSOR: pointer
+}
+#response_slider_wrap .c {
+	POSITION: relative; WIDTH: 570px; DISPLAY: block; BACKGROUND: url(/img/responseContent_570x340_left.png) no-repeat; FLOAT: left; HEIGHT: 340px; OVERFLOW: hidden; RIGHT: -570px
+}
+#response_slider_wrap .cv {
+	POSITION: relative; WIDTH: 570px; DISPLAY: block; BACKGROUND: url(/img/responseContent_570x340_left.png) no-repeat; FLOAT: left; HEIGHT: 340px; OVERFLOW: hidden; RIGHT: -570px
+}
+#response_slider_wrap .c .in {
+	PADDING-BOTTOM: 0px; MARGIN: 5px; PADDING-LEFT: 0px; WIDTH: 560px; PADDING-RIGHT: 0px; HEIGHT: 330px; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+#response_slider_wrap .c H2 {
+	MARGIN: 5px 10px 5px 15px; COLOR: #1d7b00
+}
+#response_slider_wrap .c DIV {
+	MARGIN: 5px 10px 5px 15px
+}
+#response_slider_wrap .c HR {
+	MARGIN: auto; WIDTH: 90%
+}
+#response_slider_wrap .c P {
+	BORDER-BOTTOM: #eaeaea 1px solid; MARGIN: 10px 10px 20px 0px
+}
+#response_slider_wrap .cv .in {
+	PADDING-BOTTOM: 0px; MARGIN: 5px; PADDING-LEFT: 0px; WIDTH: 560px; PADDING-RIGHT: 0px; HEIGHT: 330px; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+</STYLE>
+
+<DIV style="Z-INDEX: 15" id=response_slider_wrap>
+<DIV style="POSITION: absolute; WIDTH: 570px; OVERFLOW: hidden">
+<DIV style="DISPLAY: none" class=c jQuery1474871264684="11">
+<DIV class=in><IFRAME height=330 src="/loading.htm" frameBorder=no width=560 scrolling=no></IFRAME></DIV></DIV>
+<DIV style="DISPLAY: none" class=cv jQuery1474871264684="10">
+<DIV class=in><IFRAME height=330 src="/loading.htm" frameBorder=no width=560 scrolling=no></IFRAME></DIV></DIV></DIV>
+<DIV style="WIDTH: 30px; FLOAT: right; HEIGHT: 340px">
+<DIV class=v jQuery1474871264684="13"><IMG id=OnResponseView1_Image4 src="../../img/btn_Question_30x170.png"> </DIV>
+<DIV class=h jQuery1474871264684="12"><IMG id=OnResponseView1_Image1 src="../../img/btn_Reply_30x170.png"> </DIV></DIV></DIV>
+<SCRIPT type=text/javascript>
+
+			var li;
+            
+            $(function () {
+                var speed = 500;
+            
+                var widthR="600px";
+                var leftL="0px";
+                $('#response_slider_wrap .cv').hide();
+                $('#response_slider_wrap .c').hide();
+				
+                
+                $('#response_slider_wrap div .h').click(function () {
+
+                    var dstHref = '/ResponseFrame.aspx';
+
+ 					var iframe = $("#response_slider_wrap .c iframe");
+					if(iframe.attr('src') != dstHref) 
+						iframe.attr('src',dstHref);	
+
+                    $('#response_slider_wrap .cv').css('right','-570px');
+					$('#response_slider_wrap .cv').css('width','0px');
+                    $('#response_slider_wrap .cv').hide();
+                    $('#response_slider_wrap .v').removeClass('active');
+                        
+                    li = $(this);
+                    if (!li.hasClass('active')) {
+                        li.addClass('active');
+						if ($('#responseLeft')!=null)
+                            $('#responseLeft').css('width','600px');
+                        
+                        $('#response_slider_wrap').css('width','600px');
+                        $('#response_slider_wrap .c').show();
+                        $('#response_slider_wrap .c').css('width','570px');
+                        
+                        $('#response_slider_wrap .c').animate({ right:leftL }, speed);
+                    }
+                    else {
+                        $('#response_slider_wrap .c').css('right','-570px');
+                        $('#response_slider_wrap .c').css('width','0px');
+                        $('#response_slider_wrap .c').hide();
+                        $('#response_slider_wrap').css('width','30px');
+                        
+                        if ($('#responseLeft')!=null)
+                            $('#responseLeft').css('width','30px');
+                       
+                        li.removeClass('active');
+                    }
+                });
+
+                $('#response_slider_wrap div .v').click(function () {
+                    
+                    var dstHref = 'http://dialog.sberbank-ast.ru/need_help/?include=Y';
+                     
+					var iframe = $("#response_slider_wrap .cv iframe");
+					if(iframe.attr('src') != dstHref) 
+						iframe.attr('src',dstHref);	
+
+                    $('#response_slider_wrap .c').css('right','-570px');
+                    $('#response_slider_wrap .c').css('width','0px');
+                    $('#response_slider_wrap .c').hide();
+                    $('#response_slider_wrap .h').removeClass('active');
+                         
+                    li = $(this);
+                    if (!li.hasClass('active')) {
+                        li.addClass('active');
+                            
+                        if ($('#responseLeft')!=null)
+                            $('#responseLeft').css('width','600px');
+                        
+                        $('#response_slider_wrap').css('width','600px');
+                        $('#response_slider_wrap .cv').show();
+                        $('#response_slider_wrap .cv').css('width','570px');
+                         
+                        $('#response_slider_wrap .cv').animate({ right:leftL }, speed);
+                     }
+                     else {
+                        $('#response_slider_wrap .cv').css('right','-570px');
+                        $('#response_slider_wrap .cv').css('width','0px');
+                        $('#response_slider_wrap .cv').hide();
+                        $('#response_slider_wrap').css('width','30px');
+                        
+                        if ($('#responseLeft')!=null)
+                            $('#responseLeft').css('width','30px');
+                         
+                        li.removeClass('active');
+                    }
+                });
+
+
+                
+             });
+    </SCRIPT>
+</DIV>
+<DIV style="Z-INDEX: 1000; OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: 0px; DISPLAY: none" class="ui-dialog ui-widget ui-widget-content ui-corner-all " role=dialog tabIndex=-1 aria-labelledby=ui-dialog-title-ads-grnt jQuery1474871264684="3">
+<DIV style="MozUserSelect: none" class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" unselectable="on"><SPAN style="MozUserSelect: none" id=ui-dialog-title-ads-grnt class=ui-dialog-title unselectable="on">Реклама: Банковские гарантии</SPAN><A style="MozUserSelect: none" class="ui-dialog-titlebar-close ui-corner-all" role=button href="#" unselectable="on" jQuery1474871264684="4"><SPAN style="MozUserSelect: none" class="ui-icon ui-icon-closethick" unselectable="on">close</SPAN></A></DIV>
+<DIV id=ads-grnt class="ui-dialog-content ui-widget-content" jQuery1474871264684="2"><A href="http://банковскаягарантия.рф/Register?url=%2F" target=_blank><IMG border=0 src="/docs/banners/KO/Теледок_баннер.gif" width=468 height=60></A> </DIV></DIV>
+<DIV style="Z-INDEX: 1000; OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: 0px; DISPLAY: none" class="ui-dialog ui-widget ui-widget-content ui-corner-all " role=dialog tabIndex=-1 aria-labelledby=ui-dialog-title-DictDialog jQuery1474871264684="8">
+<DIV style="MozUserSelect: none" class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix" unselectable="on"><SPAN style="MozUserSelect: none" id=ui-dialog-title-DictDialog class=ui-dialog-title unselectable="on"> </SPAN><A style="MozUserSelect: none" class="ui-dialog-titlebar-close ui-corner-all" role=button href="#" unselectable="on" jQuery1474871264684="9"><SPAN style="MozUserSelect: none" class="ui-icon ui-icon-closethick" unselectable="on">close</SPAN></A></DIV>
+<DIV style="HEIGHT: 0px" id=DictDialog class="ui-dialog-content ui-widget-content" visible="false" jQuery1474871264684="7"><IFRAME id=spravIframe height=500 src="" frameBorder=0 width="100%" scrolling=auto>
+        </IFRAME></DIV></DIV></BODY></HTML>  

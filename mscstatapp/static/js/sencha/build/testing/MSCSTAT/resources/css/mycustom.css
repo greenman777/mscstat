@@ -1,0 +1,103 @@
+.red-overdue .x-grid-cell {
+    color: #A52A2A; 
+} 
+
+.grey-overdue .x-grid-cell { 
+    color: #808080; 
+}
+
+.green-overdue .x-grid-cell { 
+    color: #9ACD32; 
+}
+
+.blue-overdue .x-grid-cell { 
+    color: #4682B4; 
+}
+
+.icon-user {
+    background-image: url(../images/user.png) !important;
+}
+.icon-save {
+    background-image: url(../images/save.gif) !important;
+}
+.icon-delete {
+    background-image: url(../images/delete.png) !important;
+}
+.icon-tasks {
+    background-image: url(../images/tasks.png) !important;
+}
+.icon-task_add {
+    background-image: url(../images/task_add.png) !important;
+}
+.icon-comments_add {
+    background-image: url(../images/comments_add.png) !important;
+}
+.icon-task_history_add {
+    background-image: url(../images/task_history_add.png) !important;
+}
+.icon-users {
+    background-image: url(../images/users.png) !important;
+}
+.icon-notifications {
+    background-image: url(../images/notifications.png) !important;
+}
+.icon-reports {
+    background-image: url(../images/reports.png) !important;
+}
+.icon-statistics {
+    background-image: url(../images/statistics.png) !important;
+}
+.icon-change-password {
+    background-image: url(../images/change_password.png) !important;
+}
+.icon-exit {
+    background-image: url(../images/exit.png) !important;
+}
+.icon-upload {
+    background-image: url(../images/upload.png) !important;
+}
+.icon-update {
+    background-image: url(../images/update.png) !important;
+}
+.icon-save {
+    background-image: url(../images/save.png) !important;
+}
+.icon-tasks_complet {
+    background-image: url(../images/tasks_complet.png) !important;
+}
+.icon-reaction {
+    background-image: url(../images/reaction.png) !important;
+}
+.icon-info {
+    background-image: url(../images/info.png) !important;
+}
+.icon-filter {
+    background-image: url(../images/filter.png) !important;
+}
+.icon-filter_add {
+    background-image: url(../images/filter_add.png) !important;
+}
+.icon-filter_delete {
+    background-image: url(../images/filter_delete.png) !important;
+}
+.icon-preview {
+    background-image: url(../images/preview.png) !important;
+}
+.icon-chart_clear {
+    background-image: url(../images/chart_clear.png) !important;
+}
+.icon-cell {
+    background-image: url(../images/cell.png) !important;
+}
+.icon-uploading {
+    background-image: url(../images/uploading.png) !important;
+}
+.icon-openfile {
+    background-image: url(../images/openfile.png) !important;
+}
+.icon-export_excel {
+    background-image: url(../images/export_excel.png) !important;
+}
+.icon-message_send {
+    background-image: url(../images/message_send.png) !important;
+}
