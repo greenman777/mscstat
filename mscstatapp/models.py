@@ -26,7 +26,7 @@ class Mss(models.Model):
         psw_value = psw_value + " " * repeat
         self.password = binascii.b2a_hex(enc_obj.encrypt( psw_value ))
     psw = property(get_crypto, set_crypto)
-    def __unicode__(self):
+    def __str__(self):
         return self.title
     class Meta:
         ordering = ['name']
